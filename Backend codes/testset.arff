@@ -1,0 +1,9 @@
+@relation events
+@attribute 'age' numeric
+@attribute 'prof' {Teacher,Student,Doctor,Advocate,Physician,Dietitian,Technician,Accountant,Laborer,Pharmacist,other}
+@attribute 'gender' {male,female}
+@attribute 'city' {Mumbai,Delhi,Bengaluru,Hydrabad,Ahmedabad,Chennai,Kolkata,Surat,Pune,Lucknow,other-city,other-foreign-city}
+@attribute 'country' {US,China,Japan,Germany,UK,France,India,Italy,Brazil,Canada,other}
+@attribute 'category' {casual,formal,sports,english,spainish,italian,nokia,micromax,samsung,landscape,pop music,adventure,Tom & Jerry,Painting,Eric Thomas}
+@data
+99,Teacher,male,Mumbai,US,?

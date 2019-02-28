@@ -1,0 +1,375 @@
+@relation events
+@attribute 'age' real
+@attribute 'prof' {Teacher,Student,Doctor,Advocate,Physician,Dietitian,Technician,Accountant,Laborer,Pharmacist,other}
+@attribute 'gender' {male,female}
+@attribute 'city' {Mumbai,Delhi,Bengaluru,Hydrabad,Ahmedabad,Chennai,Kolkata,Surat,Pune,Lucknow,other-city,other-foreign-city}
+@attribute 'country' {US,China,Japan,Germany,UK,France,India,Italy,Brazil,Canada,other}
+@attribute 'category' {casual,formal,sports,english,spainish,italian,nokia,micromax,samsung,landscape,pop music,adventure,Tom & Jerry,Painting,Eric Thomas}
+@data
+22,Student,male,Pune,India,samsung
+22,Student,male,Pune,India,samsung
+22,Student,male,Pune,India,spainish jersey
+22,Student,male,Pune,India,english jersey
+22,Student,male,Pune,India,english jersey
+22,Student,male,Pune,India,english jersey
+21,Student,male,Pune,India,sports shoes
+21,Student,male,Pune,India,sports shoes
+21,Student,male,Pune,India,casual shoes
+21,Student,male,Pune,India,spainish jersey
+21,Student,male,Pune,India,nokia
+21,Student,male,Pune,India,nokia
+21,Student,male,Pune,India,nokia
+45,other,female,other-city,India,samsung
+45,other,female,other-city,India,nokia
+45,other,female,other-city,India,nokia
+45,other,female,other-city,India,samsung
+45,other,female,other-city,India,samsung
+22,Student,female,Bengaluru,India,spainish jersey
+22,Student,female,Bengaluru,India,english jersey
+22,Student,female,Bengaluru,India,casual shoes
+22,Student,female,Bengaluru,India,casual shoes
+22,Student,female,Bengaluru,India,casual shoes
+22,Student,female,Bengaluru,India,sports shoes
+80,Advocate,female,Delhi,China,samsung
+80,Advocate,female,Delhi,China,micromax
+80,Advocate,female,Delhi,China,micromax
+80,Advocate,female,Delhi,China,english jersey
+80,Advocate,female,Delhi,China,samsung
+40,Physician,male,Mumbai,Japan,english jersey
+40,Physician,male,Mumbai,Japan,italian jersey
+40,Physician,male,Mumbai,Japan,english jersey
+40,Physician,male,Mumbai,Japan,italian jersey
+40,Physician,male,Mumbai,Japan,english jersey
+40,Physician,male,Mumbai,Japan,sports shoes
+30,Physician,male,Delhi,India,sports shoes
+30,Physician,male,Delhi,India,casual shoes
+30,Physician,male,Delhi,India,sports shoes
+30,Physician,male,Delhi,India,casual shoes
+30,Physician,male,Delhi,India,sports shoes
+30,Physician,male,Delhi,India,italian jersey
+30,Laborer,male,Hydrabad,India,casual shoes
+30,Laborer,male,Hydrabad,India,sports shoes
+30,Laborer,male,Hydrabad,India,italian jersey
+30,Laborer,male,Hydrabad,India,italian jersey
+25,Teacher,male,other-foreign-city,US,english jersey
+35,Doctor,female,Chennai,India,micromax
+35,Doctor,female,Chennai,India,micromax
+35,Doctor,female,Chennai,India,micromax
+35,Doctor,female,Chennai,India,samsung
+35,Doctor,female,Chennai,India,nokia
+50,Technician,male,other-foreign-city,Italy,samsung
+50,Technician,male,other-foreign-city,Italy,nokia
+50,Technician,male,other-foreign-city,Italy,micromax
+50,Technician,male,other-foreign-city,Italy,nokia
+50,Technician,male,other-foreign-city,Italy,micromax
+28,Accountant,male,other-foreign-city,Canada,english jersey
+28,Accountant,male,other-foreign-city,Canada,italian jersey
+28,Accountant,male,other-foreign-city,Canada,spainish jersey
+28,Accountant,male,other-foreign-city,Canada,english jersey
+28,Accountant,male,other-foreign-city,Canada,italian jersey
+28,Accountant,male,other-foreign-city,Canada,spainish jersey
+55,Laborer,male,other-foreign-city,other,formal shoes
+55,Laborer,male,other-foreign-city,other,sports shoes
+40,Advocate,female,other-city,India,english jersey
+40,Advocate,female,other-city,India,italian jersey
+40,Advocate,female,other-city,India,samsung
+40,Advocate,female,other-city,India,samsung
+40,Advocate,female,other-city,India,micromax
+20,Physician,female,other-foreign-city,Germany,casual shoes
+23,Dietitian,female,other-foreign-city,France,micromax
+23,Dietitian,female,other-foreign-city,France,nokia
+23,Dietitian,female,other-foreign-city,France,micromax
+23,Dietitian,female,other-foreign-city,France,formal shoes
+23,Dietitian,female,other-foreign-city,France,english jersey
+44,Student,male,Delhi,India,english jersey
+44,Student,male,Delhi,India,samsung
+12,Student,male,Mumbai,India,spainish jersey
+12,Student,male,Mumbai,India,nokia
+12,Student,male,Mumbai,India,nokia
+43,Advocate,female,Ahmedabad,India,formal shoes
+43,Advocate,female,Ahmedabad,India,nokia
+43,Advocate,female,Ahmedabad,India,nokia
+43,Advocate,female,Ahmedabad,India,nokia
+22,Physician,male,Ahmedabad,India,samsung
+22,Physician,male,Ahmedabad,India,micromax
+22,Physician,male,Ahmedabad,India,nokia
+22,Physician,male,Ahmedabad,India,micromax
+22,Physician,male,Ahmedabad,India,casual shoes
+22,Physician,male,Ahmedabad,India,formal shoes
+22,Physician,male,Ahmedabad,India,spainish jersey
+22,Physician,male,Ahmedabad,India,micromax
+22,Physician,male,Ahmedabad,India,micromax
+22,Physician,male,Ahmedabad,India,micromax
+22,Physician,male,Ahmedabad,India,spainish jersey
+22,Physician,male,Ahmedabad,India,english jersey
+24,Pharmacist,male,Ahmedabad,India,formal shoes
+24,Pharmacist,male,Ahmedabad,India,italian jersey
+24,Pharmacist,male,Ahmedabad,India,italian jersey
+24,Pharmacist,male,Ahmedabad,India,english jersey
+24,Pharmacist,male,Ahmedabad,India,nokia
+24,Pharmacist,male,Kolkata,India,casual shoes
+24,Pharmacist,male,Kolkata,India,english jersey
+24,Pharmacist,male,Kolkata,India,samsung
+44,Accountant,male,Lucknow,India,english jersey
+44,Accountant,male,Lucknow,India,samsung
+44,Accountant,male,Lucknow,India,casual shoes
+44,Accountant,male,Lucknow,India,sports shoes
+23,Physician,male,Lucknow,India,sports shoes
+23,Physician,male,Lucknow,India,spainish jersey
+23,Physician,male,Lucknow,India,english jersey
+23,Physician,male,Lucknow,India,italian jersey
+23,Physician,male,Lucknow,India,formal shoes
+23,Physician,male,Lucknow,India,italian jersey
+23,Physician,male,Lucknow,India,nokia
+17,Student,male,Delhi,India,formal shoes
+17,Student,male,Delhi,India,samsung
+17,Student,male,Delhi,India,italian jersey
+17,Student,male,Delhi,India,sports shoes
+25,Student,male,Pune,India,spainish jersey
+25,Student,male,Pune,India,samsung
+25,Student,male,Pune,India,italian jersey
+25,Student,male,Pune,India,english jersey
+25,Student,male,Pune,India,english jersey
+52,Advocate,male,Pune,India,micromax
+52,Advocate,male,Pune,India,italian jersey
+52,Advocate,male,Pune,India,sports shoes
+52,Advocate,male,Pune,India,sports shoes
+52,Advocate,male,Pune,India,nokia
+52,Advocate,male,Pune,India,spainish jersey
+52,Advocate,male,Pune,India,spainish jersey
+52,Advocate,male,Pune,India,english jersey
+45,Advocate,male,Chennai,India,formal shoes
+45,Advocate,male,Chennai,India,italian jersey
+45,Advocate,male,Chennai,India,sports shoes
+45,Advocate,male,Chennai,India,spainish jersey
+45,Advocate,male,Chennai,India,nokia
+45,Advocate,male,Chennai,India,italian jersey
+45,Advocate,male,Chennai,India,micromax
+45,Advocate,male,Chennai,India,samsung
+45,Advocate,male,Chennai,India,formal shoes
+15,Student,male,Chennai,India,italian jersey
+15,Student,male,Chennai,India,italian jersey
+15,Student,male,Chennai,India,italian jersey
+15,Student,male,Chennai,India,sports shoes
+15,Student,male,Chennai,India,micromax
+15,Student,male,Chennai,India,nokia
+21,Accountant,male,Kolkata,India,spainish jersey
+21,Accountant,male,Kolkata,India,english jersey
+21,Accountant,male,Kolkata,India,micromax
+21,Accountant,male,Kolkata,India,sports shoes
+78,Technician,male,other-foreign-city,other,spainish jersey
+78,Technician,male,other-foreign-city,other,spainish jersey
+78,Technician,male,other-foreign-city,other,casual shoes
+78,Technician,male,other-foreign-city,other,nokia
+78,Technician,male,other-foreign-city,other,samsung
+78,Technician,male,other-foreign-city,other,samsung
+78,Technician,male,other-foreign-city,other,formal shoes
+78,Accountant,male,other-foreign-city,other,formal shoes
+78,Accountant,male,other-foreign-city,other,sports shoes
+78,Accountant,male,other-foreign-city,other,casual shoes
+78,Accountant,male,other-foreign-city,other,samsung
+78,Accountant,male,other-foreign-city,other,nokia
+78,Accountant,male,other-foreign-city,other,micromax
+78,Accountant,male,other-foreign-city,other,nokia
+78,Accountant,male,other-foreign-city,other,nokia
+78,Accountant,male,other-foreign-city,other,nokia
+25,Accountant,male,other-foreign-city,other,formal shoes
+25,Accountant,male,other-foreign-city,other,sports shoes
+25,Accountant,male,other-foreign-city,other,italian jersey
+25,Accountant,male,other-foreign-city,other,samsung
+25,Accountant,male,other-foreign-city,other,samsung
+25,Accountant,male,other-foreign-city,other,sports shoes
+25,Accountant,male,other-foreign-city,other,sports shoes
+25,Accountant,male,other-foreign-city,other,italian jersey
+25,Accountant,male,other-foreign-city,other,spainish jersey
+25,Accountant,male,other-foreign-city,other,italian jersey
+25,Accountant,male,other-foreign-city,other,english jersey
+25,Accountant,male,Delhi,India,casual shoes
+25,Accountant,male,Delhi,India,english jersey
+25,Accountant,male,Delhi,India,english jersey
+25,Accountant,male,Delhi,India,samsung
+25,Accountant,male,Delhi,India,english jersey
+25,Accountant,male,Delhi,India,english jersey
+25,Accountant,male,Delhi,India,italian jersey
+33,Doctor,male,Delhi,India,formal shoes
+33,Doctor,male,Delhi,India,italian jersey
+33,Doctor,male,Delhi,India,samsung
+33,Doctor,male,Delhi,India,samsung
+33,Doctor,male,Delhi,India,micromax
+33,Doctor,male,Delhi,India,spainish jersey
+33,Doctor,male,Delhi,India,casual shoes
+13,Student,male,Kolkata,India,formal shoes
+13,Student,male,Kolkata,India,sports shoes
+13,Student,male,Kolkata,India,micromax
+13,Student,male,Kolkata,India,micromax
+13,Student,male,Kolkata,India,samsung
+13,Student,male,Kolkata,India,nokia
+13,Student,male,Kolkata,India,micromax
+13,Student,male,Kolkata,India,nokia
+60,Dietitian,female,other-foreign-city,China,micromax
+60,Dietitian,female,other-foreign-city,China,micromax
+60,Dietitian,female,other-foreign-city,China,samsung
+60,Dietitian,female,other-foreign-city,China,micromax
+60,Dietitian,female,other-foreign-city,China,nokia
+70,Laborer,female,other-foreign-city,UK,italian jersey
+70,Laborer,female,other-foreign-city,UK,english jersey
+70,Laborer,female,other-foreign-city,UK,spainish jersey
+70,Laborer,female,other-foreign-city,UK,italian jersey
+70,Laborer,female,other-foreign-city,UK,spainish jersey
+70,Laborer,female,other-foreign-city,UK,italian jersey
+70,Laborer,female,other-foreign-city,UK,spainish jersey
+65,Doctor,male,other-city,India,sports shoes
+65,Doctor,male,other-city,India,sports shoes
+65,Doctor,male,other-city,India,sports shoes
+65,Doctor,male,other-foreign-city,Canada,micromax
+12,Student,male,other-foreign-city,Italy,formal shoes
+12,Student,male,other-foreign-city,Italy,sports shoes
+12,Student,male,other-foreign-city,Italy,casual shoes
+12,Student,male,other-foreign-city,Italy,sports shoes
+25,Doctor,male,other-foreign-city,Brazil,formal shoes
+25,Doctor,male,other-foreign-city,Brazil,sports shoes
+25,Doctor,male,other-foreign-city,Brazil,sports shoes
+25,Doctor,male,other-foreign-city,Brazil,english jersey
+25,Doctor,male,other-foreign-city,Brazil,spainish jersey
+25,Doctor,male,other-foreign-city,Brazil,italian jersey
+87,Dietitian,male,other-foreign-city,Germany,formal shoes
+87,Dietitian,male,other-foreign-city,Germany,sports shoes
+87,Dietitian,male,other-foreign-city,Germany,casual shoes
+56,Student,male,other-foreign-city,France,formal shoes
+56,Student,male,other-foreign-city,France,spainish jersey
+56,Student,male,other-foreign-city,France,samsung
+56,Student,male,other-foreign-city,France,samsung
+56,Student,male,other-foreign-city,France,micromax
+56,Student,female,other-foreign-city,France,sports shoes
+56,Student,female,other-foreign-city,France,casual shoes
+56,Student,female,other-foreign-city,France,sports shoes
+56,Student,female,other-foreign-city,France,casual shoes
+56,Student,female,other-foreign-city,Italy,italian jersey
+56,Student,female,other-foreign-city,Italy,spainish jersey
+56,Student,female,other-foreign-city,Italy,spainish jersey
+56,Student,female,other-foreign-city,Italy,spainish jersey
+56,Student,female,other-foreign-city,Italy,samsung
+56,Student,female,other-foreign-city,Italy,english jersey
+56,Student,female,other-foreign-city,Italy,sports shoes
+56,Student,female,other-foreign-city,Italy,english jersey
+56,Student,female,other-foreign-city,Italy,samsung
+47,Doctor,male,other-foreign-city,Japan,formal shoes
+47,Doctor,male,other-foreign-city,Japan,casual shoes
+47,Doctor,male,other-foreign-city,Japan,samsung
+47,Doctor,male,other-foreign-city,Japan,samsung
+47,Doctor,male,other-foreign-city,Japan,micromax
+47,Doctor,male,other-foreign-city,Japan,italian jersey
+41,Physician,male,other-foreign-city,Japan,casual shoes
+41,Physician,male,other-foreign-city,Japan,italian jersey
+41,Physician,male,other-foreign-city,Japan,spainish jersey
+41,Physician,male,other-foreign-city,Japan,italian jersey
+41,Physician,male,other-foreign-city,Japan,samsung
+52,Technician,male,other-foreign-city,France,casual shoes
+52,Technician,male,other-foreign-city,France,micromax
+52,Technician,male,other-foreign-city,France,micromax
+44,other,male,other-foreign-city,UK,formal shoes
+22,Doctor,male,other-foreign-city,Japan,nokia
+22,Doctor,male,other-foreign-city,Japan,micromax
+22,Doctor,male,other-foreign-city,Japan,spainish jersey
+22,Doctor,male,other-foreign-city,France,spainish jersey
+22,Doctor,male,other-foreign-city,France,samsung
+22,Doctor,male,other-foreign-city,France,italian jersey
+22,Physician,male,other-foreign-city,France,formal shoes
+22,Physician,male,other-foreign-city,France,spainish jersey
+22,Physician,male,other-foreign-city,France,micromax
+22,Physician,male,other-foreign-city,France,casual shoes
+22,Physician,male,other-foreign-city,France,sports shoes
+77,Advocate,male,other-foreign-city,US,formal shoes
+77,Advocate,male,other-foreign-city,US,english jersey
+77,Advocate,male,other-foreign-city,US,italian jersey
+77,Advocate,male,other-foreign-city,US,sports shoes
+77,Advocate,male,other-foreign-city,US,casual shoes
+44,Dietitian,male,other-foreign-city,China,sports shoes
+44,Dietitian,male,other-foreign-city,China,sports shoes
+44,Dietitian,male,other-foreign-city,China,casual shoes
+44,Dietitian,male,other-foreign-city,China,formal shoes
+44,Dietitian,male,other-foreign-city,China,spainish jersey
+44,Dietitian,male,other-foreign-city,China,casual shoes
+39,Doctor,male,other-foreign-city,Germany,formal shoes
+39,Doctor,male,other-foreign-city,Germany,spainish jersey
+39,Doctor,male,other-foreign-city,Germany,micromax
+39,Doctor,male,other-foreign-city,Germany,italian jersey
+39,Doctor,male,other-foreign-city,Germany,nokia
+77,Advocate,male,other-foreign-city,Brazil,sports shoes
+77,Advocate,male,other-foreign-city,Brazil,sports shoes
+45,Doctor,male,other-foreign-city,Germany,casual shoes
+45,Doctor,male,other-foreign-city,Germany,formal shoes
+45,Doctor,male,other-foreign-city,Germany,spainish jersey
+45,Doctor,male,other-foreign-city,Germany,italian jersey
+45,Doctor,male,other-foreign-city,Germany,nokia
+45,Doctor,male,other-foreign-city,Germany,nokia
+45,Advocate,male,other-foreign-city,UK,italian jersey
+45,Advocate,male,other-foreign-city,UK,italian jersey
+45,Advocate,male,other-foreign-city,UK,samsung
+45,Advocate,male,other-foreign-city,UK,italian jersey
+67,Student,male,other-foreign-city,UK,italian jersey
+77,Advocate,male,other-foreign-city,UK,italian jersey
+77,Advocate,male,other-foreign-city,UK,micromax
+77,Advocate,male,other-foreign-city,Brazil,formal shoes
+77,Advocate,male,other-foreign-city,Brazil,spainish jersey
+77,Advocate,male,other-foreign-city,Brazil,spainish jersey
+77,Advocate,male,other-foreign-city,Brazil,samsung
+11,Dietitian,male,other-foreign-city,Italy,formal shoes
+11,Dietitian,male,other-foreign-city,Italy,english jersey
+11,Dietitian,male,other-foreign-city,Italy,samsung
+41,Dietitian,male,other-foreign-city,UK,italian jersey
+41,Dietitian,male,other-foreign-city,UK,samsung
+41,Dietitian,male,other-foreign-city,UK,micromax
+41,Laborer,male,other-foreign-city,China,spainish jersey
+41,Laborer,male,other-foreign-city,China,casual shoes
+41,Laborer,male,other-foreign-city,China,casual shoes
+41,Laborer,male,other-foreign-city,China,italian jersey
+41,Laborer,male,other-foreign-city,China,formal shoes
+42,Physician,male,other-foreign-city,Japan,sports shoes
+42,Physician,male,other-foreign-city,Japan,italian jersey
+42,Physician,male,other-foreign-city,Japan,spainish jersey
+33,Dietitian,male,other-foreign-city,Japan,sports shoes
+33,Dietitian,male,other-foreign-city,Japan,spainish jersey
+33,Dietitian,male,other-foreign-city,Japan,formal shoes
+33,Dietitian,male,other-foreign-city,Japan,spainish jersey
+33,Dietitian,male,other-foreign-city,Japan,italian jersey
+33,Dietitian,male,other-foreign-city,Japan,samsung
+22,Accountant,male,other-foreign-city,Italy,italian jersey
+22,Accountant,male,other-foreign-city,Italy,samsung
+22,Accountant,male,other-foreign-city,Italy,spainish jersey
+22,Advocate,male,other-foreign-city,US,casual shoes
+22,Advocate,male,other-foreign-city,US,nokia
+22,Advocate,male,other-foreign-city,US,micromax
+22,Advocate,male,other-foreign-city,US,micromax
+44,Accountant,male,other-foreign-city,France,formal shoes
+44,Accountant,male,other-foreign-city,France,italian jersey
+44,Accountant,male,other-foreign-city,France,spainish jersey
+44,Accountant,male,other-foreign-city,France,spainish jersey
+24,Advocate,male,other-foreign-city,Japan,formal shoes
+24,Advocate,male,other-foreign-city,Japan,italian jersey
+11,Student,male,Mumbai,India,samsung
+11,Student,male,Mumbai,India,nokia
+14,Student,male,other-foreign-city,China,samsung
+14,Student,male,other-foreign-city,China,nokia
+14,Student,male,other-foreign-city,China,nokia
+14,Student,male,other-foreign-city,China,micromax
+14,Student,male,other-foreign-city,China,english jersey
+33,Student,male,other-foreign-city,Italy,formal shoes
+33,Student,male,other-foreign-city,Italy,italian jersey
+33,Student,male,other-foreign-city,Italy,sports shoes
+33,Student,male,other-foreign-city,Italy,sports shoes
+22,Physician,male,other-city,India,sports shoes
+44,Student,male,other-city,India,casual shoes
+38,Teacher,female,Ahmedabad,India,english jersey
+38,Teacher,female,Ahmedabad,India,italian jersey
+38,Teacher,female,Ahmedabad,India,samsung
+38,Teacher,female,Ahmedabad,India,nokia
+48,Advocate,female,Surat,India,samsung
+48,Advocate,female,Surat,India,micromax
+28,Accountant,male,other-foreign-city,Canada,casual shoes
+28,Accountant,male,other-foreign-city,Canada,casual shoes
+12,Student,male,other-foreign-city,Italy,sports shoes
+22,Accountant,male,other-foreign-city,Italy,sports shoes
+25,Doctor,male,other-foreign-city,Brazil,Eric Thomas
+25,Doctor,male,other-foreign-city,Brazil,pop music
+25,Doctor,male,other-foreign-city,Brazil,pop music
