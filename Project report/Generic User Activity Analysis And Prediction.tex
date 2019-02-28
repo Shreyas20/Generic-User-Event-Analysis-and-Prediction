@@ -1,0 +1,1979 @@
+%This is a very basic  BE PROJECT PRELIMINARY template.
+
+%############################################# 
+%#########Author :  PROJECT###########
+%#########COMPUTER ENGINEERING############
+
+
+\documentclass[oneside,a4paper,12pt]{book}
+%\usepackage{showframe}
+%\hoffset = 8.9436619718309859154929577464789pt
+%\voffset = 13.028169014084507042253521126761pt
+\usepackage{fancyhdr}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[CE]{Pune Institute of Computer Technology, Department of Computer Engineering 2016-17}
+  \fancyfoot[RE]{\thepage}
+}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+\footskip = 0.625in
+\cfoot{}
+\rfoot{}
+
+\usepackage[]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\usepackage{titlesec}
+\usepackage{tabularx}
+
+\usepackage[nottoc,notlot,notlof,numbib]{tocbibind}
+\usepackage[titletoc]{appendix}
+\usepackage{titletoc}
+\renewcommand{\appendixname}{Annexure}
+\renewcommand{\bibname}{References}
+
+\setcounter{secnumdepth}{5}
+
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{multirow}
+
+\usepackage[ruled,vlined]{algorithm2e}
+
+\begin{document}
+
+\setlength{\parindent}{0mm}
+\begin{center}
+{\bfseries SAVITRIBAI PHULE PUNE UNIVERSITY \\}
+ \vspace*{1\baselineskip}
+{\bfseries A  PROJECT REPORT ON \\}
+ \vspace*{2\baselineskip}
+{\bfseries \fontsize{16}{12} \selectfont  Generic user activity analysis and prediction \\ \vspace*{2\baselineskip}}
+{\fontsize{12}{12} \selectfont SUBMITTED TOWARDS THE PARTIAL
+ \\ FULFILLMENT OF THE REQUIREMENTS OF \\
+
+\vspace*{2\baselineskip}}
+{\bfseries \fontsize{14}{12} \selectfont \mbox{BACHELOR OF ENGINEERING (Computer
+Engineering)} \\
+\vspace*{1\baselineskip}} 
+{\bfseries \fontsize{14}{12} \selectfont BY \\ 
+\vspace*{1\baselineskip}} 
+Shreyas Kulkarni\hspace{25 mm}B120054350\\
+Kiran  Mokashi    \hspace{25 mm}  B120054362  \\
+Shailesh Bagade \hspace{25 mm}B120054232   \\
+Shivam  Bawane  \hspace{25 mm}  B120054240  \\
+
+\vspace*{2\baselineskip}
+{\bfseries \fontsize{14}{12} \selectfont Under The Guidance of \\  
+\vspace*{2\baselineskip}} 
+Prof. M. S. Wakode\\
+\vskip 1cm
+\includegraphics[width=100pt]{collegelogo.png} \\
+\vskip 0.5cm
+{\bfseries \fontsize{14}{12} \selectfont 
+DEPARTMENT OF COMPUTER ENGINEERING\\
+Pune Institute of Computer Technology \\
+Dhankawadi, Pune-411043 
+}
+\end{center}
+
+\newpage
+
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=100pt]{collegelogo.png}
+\end{figure}
+
+
+{\bfseries \fontsize{14}{12} \selectfont \centerline{Pune Institute of Computer Technology}
+\centerline{DEPARTMENT OF COMPUTER ENGINEERING}
+\vspace*{2\baselineskip}} 
+
+
+{\bfseries \fontsize{16}{12} \selectfont \centerline{CERTIFICATE} 
+\vspace*{2\baselineskip}} 
+
+\centerline{This is to certify that the Project Entitled}
+\vspace*{.5\baselineskip} 
+
+
+{\bfseries \fontsize{14}{12} \selectfont \centerline{ }Generic user activity analysis and prediction
+\vspace*{0.5\baselineskip}}
+
+\centerline{Submitted by}
+\vspace*{0.5\baselineskip} 
+\centerline{Shreyas Kulkarni \hspace{27 mm} B120054350 }
+\centerline{Kiran Mokashi  \hspace{25 mm}     B120054362 } 
+\centerline{Shailesh Bagade \hspace{25 mm}  B120054232  } 
+\centerline{Shivam Bawane \hspace{25 mm}    B120054240 }
+
+
+is a bonafide work carried out by Students under the supervision of Prof. Guide Name and it
+is submitted towards the partial fulfillment of the requirement of Bachelor of Engineering (Computer Engineering).\\
+\vskip 1cm
+\bgroup
+\def\arraystretch{0.7}
+\begin{tabular}{c c }
+Prof. M. S. Wakode &  \hspace{50 mm} Dr. R. B. Ingle \\								
+Internal Guide   &  \hspace{50 mm} H.O.D \\
+Dept. of Computer Engg.  &	\hspace{50 mm}Dept. of Computer Engg.  \\
+\end{tabular}
+%}
+\begin{center}
+%\fontsize{12}{18}\selectfont 
+{
+\vskip 1cm
+Dr. P. T. Kulkarni\\
+Principal\\
+Pune Institute of Computer Technology  
+}
+\end{center}
+\vskip 1cm
+Signature of Internal Examiner \hspace{40 mm}\mbox{Signature of External Examiner}
+\newpage
+\begin{center}
+\textbf{PROJECT APPROVAL SHEET}
+\end{center}
+\begin{center}
+ Generic user activity analysis and prediction
+ \end{center}
+\begin{center}
+
+\end{center}
+\begin{center}
+Is successfully completed by 
+\end{center}
+\centerline{Shreyas Kulkarni \hspace{27 mm} B120054350 }
+\centerline{Kiran Mokashi  \hspace{27 mm}   B120054362 } 
+\centerline{Shailesh Bagade \hspace{25 mm} B120054232  } 
+\centerline{Shivam Bawane \hspace{25 mm} B120054240 }
+
+\begin{center}
+ at
+ \end{center} 
+ \begin{center}
+ DEPARTMENT OF COMPUTER ENGINEERING
+ \end{center}
+ \begin{center}
+ PUNE INSTITUTE OF COMPUTER TECHNOLOGY
+ \end{center}
+ \begin{center}
+ SAVITRIBAI PHULE PUNE UNIVERSITY,PUNE
+ \end{center}
+ 
+ \begin{center}
+ ACADEMIC YEAR 2016-2017
+ \end{center}
+ 
+ \vspace*{1\baselineskip}}
+ \begin{tabular}{c c }
+Prof. M. S. Wakode &  \hspace{50 mm} Dr. R. B. Ingle \\								
+Internal Guide   &  \hspace{50 mm} H.O.D \\
+Dept. of Computer Engg.  &	\hspace{50 mm}Dept. of Computer Engg.  \\
+\end{tabular}
+\newpage
+
+%\pictcertificate{TITLE OF BE PROJECT}{Student Name}{Exam Seat No}{Guide Name}
+\setcounter{page}{0}
+
+\frontmatter
+\cfoot{P.I.C.T., Department of Computer Engineering 2016-17}
+\rfoot{\thepage}
+\pagenumbering{Roman}
+%\pictack{BE PROJECT TITLE}{Guide Name}
+
+		
+{  \newpage {\bfseries \fontsize{14}{12} \selectfont \centerline{Abstract} 
+\vspace*{2\baselineskip}} \setlength{\parindent}{11mm} }
+{ \setlength{\parindent}{0mm} }
+This system presents a prototype of design and implementation of a system which carries out data analysis and prediction that allows clients (e-commerce sites, video streaming etc) to configure the system according to their application. The proposed scheme consists of event collector, database, search, analytics  and recommendation engine. Data is collected in form of events from the user using RabbitMQ and then streamed through using SPARK and eventually stored in database used, MongoDB. The elastic search assists to build the search engine which helps us to parse through the data and KIBANA to perform various data analytics. Machine learning(J48 algorithm) using WEKA platform is used to build recommendation engine and analysis for vivid functionalities on available data set to provide suggestions, enhancing user experience. Analytics UI helps providing proper understanding of search patterns and user events to the clients to increase efficiency of the application.
+
+
+{  \newpage {\bfseries \fontsize{14}{12} \selectfont \centerline{Acknowledgments} 
+\vspace*{2\baselineskip}} \setlength{\parindent}{11mm} }
+{ \setlength{\parindent}{0mm} }
+
+\textit{It gives us great pleasure in presenting the preliminary project report 
+on {\bfseries \fontsize{12}{12} \selectfont `GENERIC USER EVENT ANALYSIS AND PREDICTION’'}.}
+\vspace*{1.5\baselineskip}
+
+ \textit{I would like to take this opportunity to thank my internal guide
+ \textbf{Prof.M. S. Wakode} for giving me all the help and guidance I needed. I am
+ really grateful to them for their kind support. Their valuable suggestions were very helpful.} \vspace*{1.5\baselineskip}
+
+ \textit{I am also grateful to \textbf{Prof.R. B. Ingle}, Head of Computer
+ Engineering Department, Pune Institute of Computer Technology for his indispensable
+ support, suggestions.}
+\vspace*{1.5\baselineskip}
+
+\textit{ }
+\vspace*{3\baselineskip} \\
+\begin{tabular}{p{8.2cm}c}
+&Kiran Mokashi\\
+&Shailesh Bagade\\
+&Shivam Bawane\\
+&Shreyas Kulkarni\\
+&(B.E. Computer Engg.)
+%}
+\end{tabular}
+
+
+% \maketitle
+\tableofcontents
+\listoffigures 
+\listoftables
+
+
+
+\mainmatter
+
+
+
+\titleformat{\chapter}[display]
+{\fontsize{16}{15}\filcenter}
+{\vspace*{\fill}
+ \bfseries\LARGE\MakeUppercase{\chaptertitlename}~\thechapter}
+{1pc}
+{\bfseries\LARGE\MakeUppercase}
+[\thispagestyle{empty}\vspace*{\fill}\newpage]
+
+
+
+
+
+
+
+\setlength{\parindent}{11mm}
+\chapter{Synopsis}
+
+\section{Project Title}
+ Generic User activity analysis and prediction.
+
+\section{ Project Option }
+Industry sponsored 
+
+\section{Internal Guide}
+Prof. M .S. Wakode 
+
+\section{ Sponsorship and External Guide} 
+G.S. Lab
+
+
+\section{Technical Keywords }
+% {\bfseries Technical Key Words:}      
+% \begin{itemize}
+%   \item 	Cloud Computing
+% \item	Service Composition
+% \item	Online Web services
+% \end{itemize}
+
+\begin{enumerate}
+	\item 	Data Analysis  
+	\begin{enumerate}
+		\item a.	Sorting
+		\item b.	Filtering
+		\item c.	Searching
+		
+		
+	 		\end{enumerate} 
+		
+
+
+
+\section{Problem Statement}
+\label{sec:problem}
+        To implement a system that performs data analysis and prediction for events (searches etc) performed by user on application interface using open source softwares. Predictions and recommendation will be made using suitable algorithms.
+\section{Abstract}
+\begin{itemize}
+	\item This system presents a prototype of design and implementation of a system which carries out data analysis and prediction that allows clients (e-commerce sites, video streaming etc) to configure the system according to their application. The proposed scheme consists of event collector, database, search, analytics and recommendation engine. Data is collected in form of events from the user using RabbitMQ and then streamed through using SPARK and eventually stored in database used, MongoDB. The elastic search assists to build the search engine which helps us to parse through the data and KIBANA to perform various data analytics. Machine learning(J48 algorithm) using WEKA platform is used to build recommendation engine and analysis for vivid functionalities on available data set to provide suggestions, enhancing user experience. Analytics UI helps providing proper understanding of search patterns and user events to the clients to increase efficiency of the application.
+\end{itemize}
+
+\section{Goals and Objectives}
+\begin{itemize}
+	\item •	To implement a system which will efficiently collect, analyze and predict output.
+	\item •	To implement a system which is generic. 
+\end{itemize}
+
+	
+\section{Relevant Mathematics Associated With The Project}
+\label{sec:math}
+System Description:
+\begin{itemize} 
+\item Input:: User Events.(like searches made by user on application interface) 	 
+\item Output:Prediction depending upon user events, analyzed output in form of charts.	 
+ 
+
+\item Success Conditions:proper recommendation is given	 	 
+\item Failure Conditions:The recommendation is not the most appropriate for the user.				
+\end{itemize}
+
+
+\section{Names of Conferences / Journals where papers can be published}
+\begin{itemize}
+\item  IEEE/ACM Conference/Journal 1 
+\item  Conferences/workshops in IITs
+\item  Central Universities or SPPU Conferences 
+\item IEEE/ACM Conference/Journal 2 
+\end{itemize}
+
+
+\section{Review of Conference/Journal Papers Supporting Project Idea}
+\label{sec:survey}
+   \begin{itemize}
+   \item [1].Predictive Analytics Using Data Mining Technique Using Data Mining Technique:
+Prediction can be done by using data mining techniques on large data sets. Data mining is a broad concept that consists of series of steps. Firstly data is pre-processed and then mining techniques are applied. Results from mining techniques are evaluated and interpreted and the expected result is generated using prediction algorithm 
+
+   \item[2].The Predictability of Data Values: 
+
+The predictability of data values is studied at a fundamental level. Two basic predictor models are defined : Computational predictors perform an operation on previous values to yield predicted next values. 
+To understand the potential of value prediction we perform simulations with unbounded prediction tables that are immediately updated using correct data values. 
+
+   \item[3].Feasibility Analysis of Big Log Data Real Time Search Based on Hbase and Elastic Search: 
+ 
+Elastic Search, which is based on Lucene, is the modern search engineer for cloud environment. This paper presents a real-time big data search method: First, Flume agent from the end user's machine collect log events, then Elastic Search according to the search conditions are needed row key list; finally Hbase using these row key directly from the database to get the data, the paper-based hardware to create a virtual machine environment, the experiment proved, with the search for more log events, the search response time does not increase linearly.
+
+   \item[4].Mining Modern Repositories with Elastic search: 
+ 
+Elastic search  a distributed full-text search engine | explicitly addresses issues of scalability, big data search, and performance that relational databases were simply never designed to support . While Elastic search and traditional RDBMSs
+ in many ways, at the higher-level many of the core concepts of Elastic search have analogues in the RDBMS world. All data in Elastic search is stored in indices. An index in Elastic search is like a database in a RDBMS: it can store  types of documents, update them, and search for them. Each document in Elastic search is a JSON object, analogous to a row in a table in a RDBMS.
+
+   \item[5].Survey Paper on Elastic Search:
+Elastic search is a way to organize data and make it easily accessible. It is a server based search on Lucene. It is a highly scalable, distributed and full-text search engine. Elastic search is. Elasticsearch is a standalone database which is written in Java and using HTTP/JSON protocol,it’s takes data and optimized the data.
+   \item[6].A recommender system by using classification based on frequent pattern mining and J48 algorithm.:
+
+User’s behavior modeling on the web and extracting it’s patterns can be utilized for customizing search results without user’s specifications. Since offering a precise suggestion to users in search engines and e-commerce is desirable for users, precision is the most important factor is such systems.
+
+   \item[7].Kafka: a Distributed Messaging System for Log Processing: 
+ 
+Kafka, a distributed messaging system that we developed for collecting and delivering high volumes of log data with low latency. Kafka has superior performance when compared to two popular messaging systems. We have been using Kafka in production for some time and it is processing hundreds of gigabytes of new data each day.
+
+   \item[8].Performance of Elasticsearch in Cloud  Environment:
+Elasticsearch is a distributed data storage system. It can store and fetch complex data structures serialized as JSON documents in real time . In other words, the instance in which a document has been indexed in Elasticsearch, it can be retrieved from any node in the cluster. When performing search, JSON objects are given to Elastic search and result obtained is also in JSON format. Elastic search, a full-text java based search engine, designed keeping cloud environment in mind solves issues of scalability, search in real time, and efficiency that relational databases were not able to address.
+
+   \item[9].Design and Implementation of an Indexing Method Based on Fields for  Elastic search: 
+ 
+Designing a search engine for the application and version of the nodes is of great importance for the Internet safe guard. In order to meet the users’ needs of searching the information of IP address and domain name, the paper proposed a method to convert IP address and analyze domain names. As more and more information needs to be indexed, it will take a longer time to query in the index, which will influence the users’ experience. A method to create the index based on fields, and the corresponding compressing algorithm is used to guarantee the compression efficiency. 
+
+   \item[10].Classification and prediction based data mining algorithms to predict slow learners in education sector: 
+ 
+This paper is about identifying the slow learners among students and displaying it by a predictive data mining model using classification based algorithms. The database school is tested and applied various prediction algorithms. WEKA an Open source tool. As a result, statistics are generated based on all classification algorithms and comparison of all five classifiers is also done in order to predict the accuracy and to find the best performing classification algorithm among all. In this paper, a knowledge flow model is also shown among all five classifiers.
+
+   \end{itemize}
+
+\section{Plan of Project Execution}
+  Using planner or alike project management tool.
+
+
+
+\chapter{Technical Keywords}
+\section{Area of Project}
+Machine learning, Data analysis 
+
+\section{Technical Keywords}
+% {\bfseries Technical Key Words:}      
+% \begin{itemize}
+%   \item 	Cloud Computing
+% \item	Service Composition
+% \item	Online Web services
+% \end{itemize}
+\begin{enumerate}
+	\item .  Machine Learning 
+	\begin{enumerate}
+		\item Control Structure  
+		\begin{enumerate}
+			    \item  Reliability  
+				\item  Efficiency 
+	    \end{enumerate} 
+	 		
+    \end{enumerate} 
+    
+\end{enumerate}
+	
+\begin{enumerate}
+	\item Data Analysis 
+	\begin{enumerate}
+		\item   	Sorting
+		\item		Filtering
+		\item		Filtering
+		\item		Indexing
+	 		
+    \end{enumerate}
+    
+\end{enumerate}
+
+
+			
+\chapter{Introduction}
+\section{Project Idea}
+\begin{itemize}
+\item •	User Events Analysis.
+\end{itemize}
+
+
+\section{Motivation Of The Project}  
+\begin{itemize}
+\item •	To design a system that gives relevant and more accurate recommendations to end user.
+\item •	To provide proper understanding of search patters and user events to increase efficiency of the application in which it is used.
+\end{itemize}
+
+\section{Literature Survey}
+\begin{itemize}
+\item Predictive Analytics Using Data Mining Technique Using Data Mining Technique:
+Prediction can be done by using data mining techniques on large data sets. Data mining is a broad concept that consists of series of steps. Firstly data is pre-processed and then mining techniques are applied. Results from mining techniques are evaluated and interpreted and the expected result is generated using prediction algorithm.
+
+\item The Predictability of Data Values: 
+
+The predictability of data values is studied at a fundamental level. Two basic predictor models are defined : Computational predictors perform an operation on previous values to yield predicted next values. 
+To understand the potential of value prediction we perform simulations with unbounded prediction tables that are immediately updated using correct data values.
+
+\item Feasibility Analysis of Big Log Data Real Time Search Based on Hbase and Elastic Search: 
+ 
+Elastic Search, which is based on Lucene, is the modern search engineer for cloud environment. This paper presents a real-time big data search method: First, Flume agent from the end user's machine collect log events, then Elastic Search according to the search conditions are needed row key list; finally Hbase using these row key directly from the database to get the data, the paper-based hardware to create a virtual machine environment, the experiment proved, with the search for more log events, the search response time does not increase linearly.
+
+\item Mining Modern Repositories with Elastic search: 
+ 
+Elastic search  a distributed full-text search engine | explicitly addresses issues of scalability, big data search, and performance that relational databases were simply never designed to support .
+ 
+While Elastic search and traditional RDBMSs  in many ways, at the higher-level many of the core concepts of Elastic search have analogues in the RDBMS world. All data in Elastic search is stored in indices. An index in Elastic search is like a database in a RDBMS: it can store  types of documents, update them, and search for them. Each document in Elastic search is a JSON object, analogous to a row in a table in a 
+RDBMS. 
+\item Survey Paper on Elastic Search:
+Elastic search is a way to organize data and make it easily accessible. It is a server based search on Lucene. It is a highly scalable, distributed and full-text search engine. Elastic search is. Elasticsearch is a standalone database which is written in Java and using HTTP/JSON protocol,it’s takes data and optimized the data.
+\item A recommender system by using classification based on frequent pattern mining and J48 algorithm.
+
+User’s behavior modeling on the web and extracting it’s patterns can be utilized for customizing search results without user’s specifications. Since offering a precise suggestion to users in search engines and e-commerce is desirable for users, precision is the most important factor is such systems.
+\item Kafka: a Distributed Messaging System for Log Processing: 
+ 
+Kafka, a distributed messaging system that we developed for collecting and delivering high volumes of log data with low latency. Kafka has superior performance when compared to two popular messaging systems. We have been using Kafka in production for some time and it is processing hundreds of gigabytes of new data each day.
+\item Performance of Elasticsearch in Cloud  Environment:
+Elasticsearch is a distributed data storage system. It can store and fetch complex data structures serialized as JSON documents in real time . In other words, the instance in which a document has been indexed in Elasticsearch, it can be retrieved from any node in the cluster. When performing search, JSON objects are given to Elastic search and result obtained is also in JSON format. Elastic search, a full-text java based search engine, designed keeping cloud environment in mind solves issues of scalability, search in real time, and efficiency that relational databases were not able to address.
+\item Performance of Elasticsearch in Cloud  Environment:
+Elasticsearch is a distributed data storage system. It can store and fetch complex data structures serialized as JSON documents in real time . In other words, the instance in which a document has been indexed in Elasticsearch, it can be retrieved from any node in the cluster. When performing search, JSON objects are given to Elastic search and result obtained is also in JSON format. Elastic search, a full-text java based search engine, designed keeping cloud environment in mind solves issues of scalability, search in real time, and efficiency that relational databases were not able to address.
+\item Design and Implementation of an Indexing Method Based on Fields for  Elastic search: 
+ 
+Designing a search engine for the application and version of the nodes is of great importance for the Internet safe guard. In order to meet the users’ needs of searching the information of IP address and domain name, the paper proposed a method to convert IP address and analyze domain names. As more and more information needs to be indexed, it will take a longer time to query in the index, which will influence the users’ experience. A method to create the index based on fields, and the corresponding compressing algorithm is used to guarantee the compression efficiency. 
+\item Classification and prediction based data mining algorithms to predict slow learners in education sector: 
+ 
+This paper is about identifying the slow learners among students and displaying it by a predictive data mining model using classification based algorithms. The database school is tested and applied various prediction algorithms. WEKA an Open source tool. As a result, statistics are generated based on all classification algorithms and comparison of all five classifiers is also done in order to predict the accuracy and to find the best performing classification algorithm among all. In this paper, a knowledge flow model is also shown among all five classifiers.
+
+\end{itemize}
+
+
+\chapter{Problem Definition and Scope}
+\section{Problem Statement}
+To implement a system that performs data analysis and prediction for events performed by user.
+
+
+\subsection{Goals and Objectives}  
+Goal and Objectives: 
+\begin{itemize}
+  	\item 	To design a system which carries out data analysis and prediction that allows client to configure the system according to their application.
+	\item 	To provide proper understanding of search patters and user events to increase efficiency of the application in which it is used.
+	\item 	Applicable for different systems.
+	
+\end{itemize}
+
+ \subsection{Statement of Scope} 
+		\begin{itemize}  
+	\item •	System will collect different events performed by user and analyze it using machine learning algorithm like WEKA. It will collect all types of events performed by user, analyze it and then will predict result, generate charts.
+	\item •	Software will be generic. It means that it will collect all type of data, analyze and predict output. It will also generate output in the form of charts.
+	
+	\end{itemize}
+
+
+\section{Major Constraints}
+\begin{itemize}
+\item •	All types of events will be collected, analyzing particular events based on vendor’s requirement.
+\item •	Events must be classified based on vendor’s requirement.
+\end{itemize}
+
+\section{Methodologies of Problem Solving and Efficiency Issues}
+\begin{itemize}
+	\item Event collector will collect all events performed by user, out of which  10 percent will be used for analysis. Hence data must be sorted efficiently using tools like elastic search so that required data will be available for analysis and else will be removed.
+	
+\end{itemize}
+
+
+
+\section{Outcome}
+\begin{itemize}
+\item •	Prediction based upon user events.
+\item •	Concise and precise summary and analysis of various events performed by user.
+\end{itemize}
+
+\section{Applications}
+\begin{itemize}
+\item •	Video Searching: Videos mostly viewed, analysis of videos based upon viewed in various locations, users etc .
+\item •	E-Commerce Sites: Finding products maximum searched. 
+
+\end{itemize}
+
+\section{Hardware Resources Required}
+\begin{table}[!htbp]
+\begin{center}
+\def\arraystretch{1.5}
+  \begin{tabular}{| c | c | c | c |}
+\hline
+Sr. No. &	Parameter &	Minimum Requirement & Justification \\
+\hline
+1 &	CPU Speed &	 2 GHz  & to process the data\\
+\hline
+2 &	RAM  &	3 GB &  to provide max speed\\
+ \hline
+\end{tabular}
+ \caption { Hardware Requirements }
+ \label{tab:hreq}
+\end{center}
+
+\end{table}
+
+
+\section{Software Resources Required}
+Platform : 
+\begin{enumerate}
+\item Operating System: Ubuntu 64 bit Opensource Operating System
+\item IDE: Eclipse Neon 
+\item Programming Languages: : Java, Python 
+\end{enumerate}
+
+
+
+
+\chapter{Project Plan}
+
+\section{Project Estimates}
+                  
+\subsection{Reconciled Estimates}
+\subsubsection{Cost Estimate}
+
+Open source software are used. Therefore, no need for licensing cost.
+
+\subsubsection{Time Estimates}
+
+Software will take 6 months to develop. 
+
+\subsection{Project Resources}
+          \begin{itemize}
+\item 1.	RabbitMQ 
+\item 2.	MongoDB
+\item 3.	Elastic Search 
+\item 4.	SPARK
+\item 5.	Kibana 
+\end{itemize}
+
+
+ 
+
+\section{Risk Management w.r.t. NP Complete analysis}
+This section discusses Project risks and the approach to managing them.
+\subsection{Risk Identification}
+For risks identification, review of scope document, requirements specifications and schedule is done. Answers to questionnaire revealed some risks. Each risk is categorized as per the categories mentioned in \cite{bookPressman}. Please refer table \ref{tab:risk} for all the risks. You can refereed following risk identification questionnaire.
+
+\begin{enumerate}
+\item Have top software and customer managers formally committed to support the project?: No
+\item Are end-users enthusiastically committed to the project and the system/product to be built?: Yes
+\item Are requirements fully understood by the software engineering team and its customers?: Yes
+\item Have customers been involved fully in the definition of requirements?: Yes
+\item Do end-users have realistic expectations?: Yes
+\item Does the software engineering team have the right mix of skills?: Yes
+\item Are project requirements stable?: No
+\item Is the number of people on the project team adequate to do the job?: Yes
+\item Do all customer/user constituencies agree on the importance of the project and on the requirements for the system/product to be built?: Yes
+\end{enumerate}
+
+\subsection{Risk Analysis}
+The risks for the Project can be analyzed within the constraints of time and quality
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| c | X | c | c | c | c |}
+\hline
+\multirow{2}{*}{ID} & \multirow{2}{*}{Risk Description}	& \multirow{2}{*}{Probability} & \multicolumn{3}{|c|}{Impact} \\ \cline{4-6}
+	& & &	Schedule	& Quality	& Overall \\ \hline
+1	& Description 1	& Low	& Low	& High	& High \\ \hline
+2	& Description 2	& Low	& Low	& High	& High \\ \hline
+\end{tabularx}
+\end{center}
+\caption{Risk Table}
+\label{tab:risk}
+\end{table}
+
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabular}{| c | c | c |}
+\hline
+Probability & Value &	Description \\ \hline
+High &	Probability of occurrence is &  $ > 75 \% $ \\ \hline
+Medium &	Probability of occurrence is  & $26-75 \% $ \\ \hline
+Low	& Probability of occurrence is & $ < 25 \% $ \\ \hline
+\end{tabular}
+\end{center}
+\caption{Risk Probability definitions }
+\label{tab:riskdef}
+\end{table}
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| c | c | X |}
+\hline
+Impact & Value	& Description \\ \hline
+Very high &	$> 10 \%$ & Schedule impact or Unacceptable quality \\ \hline
+High &	$5-10 \%$ & Schedule impact or Some parts of the project have low quality \\ \hline
+Medium	& $ < 5 \% $ & Schedule impact or Barely noticeable degradation in quality Low	Impact on schedule or Quality can be incorporated \\ \hline
+\end{tabularx}
+\end{center}
+\caption{Risk Impact definitions }
+\label{tab:riskImpactDef}
+\end{table}
+
+\subsection{Overview of Risk Mitigation, Monitoring, Management}
+
+
+Following are the details for each risk.
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| l | X |}
+\hline 
+Risk ID	& 1 \\ \hline
+Risk Description	& Description 1 \\ \hline
+Category	& Development Environment. \\ \hline
+Source	& Software requirement Specification document. \\ \hline
+Probability	& Low \\ \hline
+Impact	& High \\ \hline
+Response	& Mitigate \\ \hline
+Strategy	& Strategy \\ \hline
+Risk Status	& Occurred \\ \hline
+\end{tabularx}
+\end{center}
+%\caption{Risk Impact definitions \cite{bookPressman}}
+\label{tab:risk1}
+\end{table}
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| l | X |}
+\hline 
+Risk ID	& 2 \\ \hline
+Risk Description	& Description 2 \\ \hline
+Category	& Requirements \\ \hline
+Source	& Software Design Specification documentation review. \\ \hline
+Probability	& Low \\ \hline
+Impact	& High \\ \hline
+Response	& Mitigate \\ \hline
+Strategy	& Better testing will resolve this issue.  \\ \hline
+Risk Status	& Identified \\ \hline
+\end{tabularx}
+\end{center}
+\label{tab:risk2}
+\end{table}
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| l | X |}
+\hline 
+Risk ID	& 3 \\ \hline
+Risk Description	& Description 3 \\ \hline
+Category	& Technology \\ \hline
+Source	& This was identified during early development and testing. \\ \hline
+Probability	& Low \\ \hline
+Impact	& Very High \\ \hline
+Response	& Accept \\ \hline
+Strategy	& Example Running Service Registry behind proxy balancer  \\ \hline
+Risk Status	& Identified \\ \hline
+\end{tabularx}
+\end{center}
+\label{tab:risk3}
+\end{table}
+
+\section{Project Schedule}  
+\subsection{Project Task Set}  
+Major Tasks in the Project stages are:
+\begin{itemize}
+  \item Task 1: Deciding input, output and scope
+  \item Task 2: Acquiring the data-set
+  \item Task 3: Pre-processing data-set and creating database
+  \item Task 4: Deciding and implementation of algorithm
+  \item Task 5: Creating GUI
+\end{itemize}
+
+\subsection{Task Network}  
+Project tasks and their dependencies are noted in this diagrammatic form.
+\subsection{Timeline Chart}  
+A project timeline chart is presented. This may include a time line for the entire project.
+
+\includegraphics[width = 16cm]{task}
+
+ 
+\section{Team Organization}
+The manner in which staff is organized and the mechanisms for reporting are noted.  
+\subsection{Team Structure}\begin{itemize}
+  \item We work in group of 4 members. We communicate with help of Apps like WhatsApp, Hangout. We have meeting every week with our guide to discuss the progress and hurdles which we face and try to find a feasible solution for the problem.
+\end{itemize}
+
+\subsection{Management Reporting and Communication}
+Mechanisms for progress reporting and inter/intra team communication are identified as per assessment sheet and lab time table. 
+ 
+\chapter{Software Requirement Specification  }
+
+\section{Introduction}
+\subsection{Purpose and Scope of Document}
+An SRS is basically an organizations understanding (in writing) of a customer or potential clients system requirements and dependencies at a particular point in time (usually) prior to any actual design or development work. Its a two-way insurance policy that assures that both the client and the organization understand the others requirements from that perspective at a given point in time.
+\begin{itemize}
+\item It provides feedback to the customer.
+\item It decomposes the problem into component parts.
+\item It serves as an input to the design specification.
+\item It serves as the parent document.
+\end{itemize}
+
+\subsection{Overview of Responsibilities of Developer}
+\begin{itemize}
+\item Initial research duties for a product development engineer include identifying the needs and goals for a new product, from function to aesthetics.
+
+\item They often coordinate with market researchers to evaluate market needs, existing competition and potential costs.
+
+\item The primary responsibility of development engineers is to create a product design that fulfills a company or client’s strategic goals.
+
+\item They oversee research and design teams, lead testing procedures and draft specifications for manufacturing.
+
+\item They direct the creation of models or samples and fine-tune designs until they are ready for production.
+\end{itemize}  
+  
+\section{Usage Scenario}
+This section provides various usage scenarios for the system to be developed.  
+ \subsection{User Profiles}  
+\begin{itemize}
+Collect various events performed by user. Store it in database. Analyze data, predict result by using machine learning algorithm. 
+
+\subsection{Use-Cases}
+All use-cases for the software are presented. Description of all main Use cases using use case template is to be provided.
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| c | c | X | c | X |}
+\hline
+Sr No.	& Use Case	& Description	& Actors	& Assumptions \\
+\hline
+1& Event collection & collect events performed by the user &- & All events performed by user are collected \\
+\hline
+\end{tabularx}
+\end{center}
+\caption{Use Cases}
+\label{tab:usecase}
+\end{table}
+
+
+\subsection{Use Case View}
+Use Case Diagram. Example is given below
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{ucd}}
+	  \caption{Use case diagram}
+	  \label{fig:usecase}
+	\end{figure}
+\end{center}  
+
+\section{Data Model and Description}  
+\subsection{Data Description}  
+Data objects that will be managed/manipulated by the software are described in this section. The database entities or files or data structures  required to be described. For data objects details can be given as below
+\subsection{Data Objects and Relationships}
+  Data objects and their major attributes and relationships among data objects are described using an ERD- like form.
+
+ 
+ 
+\section{Functional Model and Description}  
+A description of each major software function, along with data flow (structured analysis) or class hierarchy (Analysis Class diagram with class description for object oriented system) is presented. 
+\subsection{Data Flow Diagram}  
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{dfd1}}
+		\fbox{\includegraphics[width=\textwidth]{dfd2}}
+		\fbox{\includegraphics[width=\textwidth]{dfd3}}
+	  \caption{Data Flow diagram}
+	  \label{fig:usecase}
+	\end{figure}
+\end{center}
+\newpage
+
+
+
+ 
+\subsection{Activity Diagram:}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{ad}}
+	  \caption{Activity Diagram}
+	  \label{fig:usecase}
+	\end{figure}
+\end{center} 
+\newpage
+
+\subsection{Non Functional Requirements:}
+\begin{itemize}
+	\item	Interface Requirements
+	\item	Performance Requirements
+    \item	Software quality attributes such as availability [ related to Reliability], modifiability [includes portability, reusability, scalability] ,  		performance, security, testability and usability[includes self 			adaptability and user adaptability] 
+\end{itemize} 
+
+\subsection{State Diagram:}	
+  State Transition Diagram\\
+The states are
+represented in ovals and state of system gets changed when certain events occur. The transitions from one state to the other are represented by arrows. The Figure    shows important states and events that occur while creating new project.
+
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=230pt]{state_diag}}
+	  \caption{State transition diagram}
+	  \label{fig:state-dig}
+	\end{figure}
+\end{center} 
+ 
+ \subsection{Design Constraints}	
+Any design constraints that will impact the subsystem are noted.
+ \subsection{Software Interface Description}	 
+The software interface(s)to the outside world is(are) described.
+The requirements for interfaces to other devices/systems/networks/human are stated.
+
+
+
+\chapter{Detailed Design Document using Appendix A and B}
+ \section{Introduction}  
+This document specifies the design that is used to solve the problem of Product.  
+\section{Architectural Design}  
+	A description of the program architecture is presented. Subsystem design or Block diagram,Package Diagram,Deployment diagram with description is to be presented.
+
+ 
+  \begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{arch}}
+	  \caption{Architecture diagram}
+	  \label{fig:arch-dig}
+	\end{figure}
+\end{center} 
+
+
+\section{Data design (using Appendices A and B)}   
+A description of all data structures including internal, global, and temporary data structures, database design (tables), file formats.
+\subsection{Data structure}
+Data structures can implement one or more particular abstract data types (ADT), which specify the operations that can be performed on a data structure and the computational complexity of those operations. In comparison, a data structure is a concrete implementation of the specification provided by an ADT
+Data structures used in project: arrays, lists, vectors
+\subsection{Database description}
+Each event performed by the user is collected and stored in MongoDB and then sent to Elastic search for analysis. 
+
+\section{Compoent Design} 
+Class diagrams, Interaction Diagrams, Algorithms. Description of each component description required.
+\subsection{Class Diagram}
+ \begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{class}}
+	  \caption{Class Diagram}
+	  \label{fig:class-dig}
+	\end{figure}
+\end{center} 
+ 
+\chapter{Project Implementation}
+  \section{Introduction}
+  Data is collected in form of events from the user using RabbitMQ and then streamed through using SPARK and eventually stored in database used, MongoDB. The elastic search assists to build the search engine which helps us to parse through the data and KIBANA to perform various data analytics. Machine learning(J48 algorithm) using WEKA platform is used to build recommendation engine and analysis for vivid functionalities on available data set to provide suggestions, enhancing user experience. Analytics UI helps providing proper understanding of search patterns and user events to the clients to increase efficiency of the application.
+  \section{Tools and Technologies Used}
+ \begin{itemize}
+	\item	RabbitMQ
+	\item	Spark
+    \item	MongoDB
+    \item   Elastic search
+    \item   Kibana
+    \item   Weka tool
+\end{itemize} 
+  \section{Methodologies/Algorithm Details}
+  We have used J48 algorithm and the recommendation algorithm.
+  \subsection{Algorithm 1/Pseudo Code}
+  \begin{enumerate}
+\item Collect information of user clicks from database.
+\item Train data set from collected information.
+\item Generate decision tree from train data set. 
+\item Collect test data set from user for recommendation.
+\item Generate recommendation by applying test data set on decision tree.
+\end{enumerate}
+  
+  
+\chapter{Software Testing}
+ \section{Type of Testing Used}
+   Unit Testing: Unit Testing is a level of software testing where individual units/ components of a software are tested. The purpose is to validate that
+each unit of the software performs as designed.
+
+   \section{Test Cases and Test Results}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{test_cases.PNG}}
+	  \caption{Test Cases}
+	  \label{fig:test_cases}
+	\end{figure}
+\end{center}  
+   
+\chapter{Results}
+\section{Screen shots}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{recom}}
+	  \caption{Recommendation}
+	  \label{fig:Recommendation}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{gui3}}
+	   \caption{Login page}
+	  \label{fig:Login page}
+	  
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{gui4}}
+	     \caption{User form}
+	  \label{fig:User form}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{gui1}}
+	   \caption{Demo website}
+	  \label{fig:Demo website}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{gui2}}
+	  \caption{Image details}
+	  \label{fig:Image details}
+	\end{figure}
+\end{center}
+ \begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{analysis}}
+	  \label{fig:Analysis}
+	\end{figure}
+\end{center}
+ 
+
+\chapter{Deployment and Maintenance}
+     \section{Installation and Un-Installation}
+     \begin{enumerate}
+\item Since there are two types of users for our System Customer and Vendor.
+\item Customer just need to access websites of Vendors so no need of installation for Customer.He will only require a browser.
+\item Vendor will require to install Kibana for accessing analysis.
+\item When we uninstall kibana , all its dependencies automatically get removed.
+\end{enumerate}
+
+\section{User Help}
+For Users
+     \begin{enumerate}
+\item Fill all the details while signing up in the userform..
+\item Login with email-id and password.
+\item Click on the desired image so that in the backend user details and product details will be inserted into the database to perform analysis and display recommendation.
+\end{enumerate}
+
+For Vendors
+      \begin{enumerate}
+\item In the backend, changes should be made so the javascript file will be called and details should fetched for every event performed by the user.
+\item Install kibana to perform appropriate queries so to perform the required analysis and customise the system.
+\item GUI should be dynamically changed so that proper recommendation will be displayed for every user.
+\end{enumerate}
+ \chapter{Conclusion and Future scope}
+ \item In this project, we have designed optimization framework operates on various systems. The technology stack used can be used to improve vendor’s performance efficiently. Analysis can be correctly performed based on various factors and criterion which depends on the argument provided to this framework by vendors according to their requirements. So that vendor can optimize their system and thereby increase efficiency and profit. It is generic framework so performance depends on the application and their arguments. As dataset increases, accuracy of the results also increases. J48 algorithm using weka platform is used to recommend products to the users based on raw data collected. So, this framework can be used almost everywhere as recommendation engine for users and analysis for vendors displayed using various geomentric diagrams. 
+ \item Currently we are giving recommendation on user attributes , but we can also give recommendation based on both , user profiles and user events.Also we will be able to predict user attributes if the person logs in as guest based on the the events he performed.  
+
+% \bibliographystyle{plain}
+
+\bibliographystyle{ieeetr}
+\bibliography{biblo}
+
+\begin{appendices}
+
+\chapter{References}[1]Hina Gulati, “Predictive Analytics Using Data Mining Technique”, 2015 2nd International Conference on Computing for Sustainable Global Development (INDIACom).
+Ticketing System” 2015 International Conference on Green Computing and Internet of Things (ICGCIoT)\newline
+[2] Yiannakis Sazeides and James E. Smith
+Department of Electrical and Computer Engineering University of Wisconsin-Madison, “The Predictability of Data Values”, 14 15 Engr. Dr. Madison, WI 53706, ieee-paper 2014
+.\newline
+[3] Jun Bai, Northern BeiJing Vocational Education Institute BeiJing, University of Wisconsin-Madison, “Feasibility Analysis of Big Log Data Real Time Search Based on Hbase and ElasticSearch”, 2013 Ninth International Conference on Natural Computation (ICNC)\newline
+[4]. Oleksii Kononenko, Olga Baysal, Reid Holmes, and Michael W. Godfrey David R. Cheriton School of Computer Science University of Waterloo, Waterloo, ON, Canada, “Mining Modern Repositories with 2015Elaticsearch”.\newline
+[5].Pragya Gupta1, Sreeja Nair, “ Survey Paper on Elastic Search”, International Journal, 2014.\newline
+[6]. Dalip, Vijay Kumar Ph.D., “GPS and GSM based Passenger Tracking System”, International Journal of Computer Applications (0975 – 8887) Volume 100– No.2, August 2014.\newline
+[7].Jay Kreps, LinkedIn Corp, Neha Narkhede, LinkedIn Corp. Jun Rao, LinkedIn Corp. “Kafka: a Distributed Messaging System for Log Processing”, NetDB'11, Jun. 12, 2011, Athens, Greece. Copyright 2011 ACM 978-1-4503-0652-2/11/06.\newline
+[8]. Urvi Thacker , Manjusha Pandey, Siddharth S. Rautaray,School of Computer Engineering KIIT University Bhubaneswar, India “Performance of Elasticsearch in Cloud Environment with nGram and non-nGram indexing”, International Conference on Electrical, Electronics, and Optimization Techniques (ICEEOT) - 2016.`\newline
+[9].Xue-meng Li, Yong-yi Wang Network Engineering Department,PLA Electronic Engineering Institute,Hefei, China”Design and Implementation of an Indexing Method Based on Fields for Elasticsearch”, 2015 Fifth International Conference on Instrumentation and Measurement, Computer, Communication and Control,ieee 2015,china.\newline
+[10].Parneet Kaura,Manpreet Singhb,Gurpreet Singh Josanc aScholar, Department of CSE, Punjab Technical University,Jalandhar 144603,India Assistant Professor, Department CSE&IT, GNDEC, Ludhiana, Punjab, India “ Classification and prediction based data mining algorithms to predict slow learners in education sector”, 3rd International Conference on Recent Trends in Computing 2015(ICRTC-2015).
+
+% \chapter{ALGORITHMIC DESIGN}
+\chapter{Laboratory Assignments on Project Analysis of Algorithmic Design}
+\begin{itemize}
+\item To develop the problem under consideration and justify feasibilty using
+concepts of knowledge canvas and IDEA Matrix.\\
+Refer \cite{innovationbook} for IDEA Matrix and Knowledge canvas model. Case studies are given in this book. IDEA Matrix is represented in the following form. Knowledge canvas represents about identification  of opportunity for product. Feasibility is represented w.r.t. business perspective.\\ 
+
+
+
+
+\item Project problem statement feasibility assessment using NP-Hard, NP-Complete or satisfy ability issues using modern algebra and/or relevant mathematical models.
+\item input x,output y, y=f(x)
+\end{itemize}
+
+\chapter{Laboratory Assignments on Project Quality and Reliability Testing of Project Design}
+
+It should include assignments such as
+\begin{itemize}
+\item Use of divide and conquer strategies to exploit distributed/parallel processing of the above to identify object, morphisms, overloading in functions (if any), and functional relations and any other dependencies (as per requirements).
+             It can include Venn diagram, state diagram, function relations, i/o relations; use this to derive objects, morphism, overloading
+
+\item Use of above to draw functional dependency graphs and relevant Software modeling methods, techniques
+including UML diagrams or other necessities using appropriate tools.
+\item Testing of project problem statement using generated test data (using mathematical models, GUI, Function testing principles, if any) selection and appropriate use of testing tools, testing of UML diagram's reliability. Write also test cases [Black box testing] for each identified functions. 
+You can use Mathematical or equivalent open source tool for generating test data. 
+
+\end{itemize}
+
+
+\chapter{Project Planner}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{plannerjpg.png}}
+	  \caption{Planner}
+	  \label{fig:planner}
+	\end{figure}
+\end{center}
+
+
+
+
+\chapter{Reviewers Comments of Paper Submitted}
+
+\begin{enumerate}
+\item Paper Title:Generic user activity analysis and prediction.
+\item Name of the Conference/Journal where paper submitted : IRJET
+\item Paper accepted/rejected : accepted
+\item Review comments by reviewer : -
+\item Corrective actions if any :  -
+
+\end{enumerate}
+
+\chapter{Plagiarism Report}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{plag.JPG}}
+	  \caption{Plagiarism}
+	  \label{fig:plagirism}
+	\end{figure}
+\end{center}
+\newpage
+\chapter{ Term-II Project Laboratory Assignments}
+\begin{enumerate}
+\item Review of design and necessary corrective actions taking into consideration the feedback report of Term I assessment, and other competitions/conferences participated like IIT, Central Universities, University Conferences or equivalent centers of excellence etc.
+\item Project workstation selection, installations along with setup and installation report preparations.
+\item Programming of the project functions, interfaces and GUI (if any) as per 1 st Term term-work submission using corrective actions recommended in Term-I assessment of Term-work.
+\item Test tool selection and testing of various test cases for the project performed and generate various testing result charts, graphs etc. including reliability testing.\\
+
+\item Installations and Reliability Testing Reports at the client end.
+
+\end{enumerate}
+
+
+\chapter{Information of Project Group Members}
+\begin{enumerate}
+\item Name : Kiran Mokashi \hspace{90 mm}\includegraphics[width=60pt]{kiran}
+\item Date of Birth : 27/03/1996
+\item Gender : Male
+\item Permanent Address : Govind Complex, Flat No-4, BalajiNagar, Pune-411043
+\item E-Mail : kiranmokashi27@gmail.com
+\item Mobile/Contact No. : 9767641743
+\item Placement Details : Placed at Veritas
+\item Paper Published : Yes
+
+\end{enumerate}
+
+
+
+\newpage
+\begin{enumerate}
+\item Name : Shailesh Bagade \hspace{90 mm}\includegraphics[width=60pt]{shailesh}
+\item Date of Birth : 21/03/1995 
+\item Gender : Male
+\item Permanent Address : krushkunj, siddhivinayak nagar, ghatpuri road, khamgaon 
+\item E-Mail : shaileshvbagade@gmail.com
+\item Mobile/Contact No. : 8275028550
+\item Placement Details : Placed at Cybage.
+\item Paper Published : Yes
+
+\end{enumerate}
+
+\newpage
+\begin{enumerate}
+\item Name : Shivam Bawane \hspace{90 mm}\includegraphics[width=60pt]{shivam}
+\item Date of Birth : 27/02/1995 
+\item Gender : Male
+\item Permanent Address : 59B, shankar nagar , nagpur-440010. 
+\item E-Mail : shivambawane@gmail.com
+\item Mobile/Contact No. : 7774037664
+\item Placement Details : Not placed.
+\item Paper Published : Yes
+
+\end{enumerate}
+
+\newpage
+\begin{enumerate}
+\item Name : Shreyas Kulkarni \hspace{90 mm}\includegraphics[width=60pt]{shreyas}
+\item Date of Birth : 20/01/1996 
+\item Gender : Male
+\item Permanent Address : Flat no 11,Ganadhish appt.,Narsinh nagar,Gangapur road,Nashik
+\item E-Mail : shreyaskulkarni20@gmail.com
+\item Mobile/Contact No. : 8308202837
+\item Placement Details : Placed at Accenture
+\item Paper Published : Yes
+
+\end{enumerate}
+\end{appendices}
+
+
+\end{document}
+\section{Relevant Mathematics Associated with the Project}
+\label{sec:math}
+System Description:
+\begin{itemize} 
+\item Input:Source location, Destination location 	 
+\item Output:Bus location,ETA,Recommended bus	 
+\item Identify data structures, classes, divide and conquer strategies to exploit distributed/parallel/concurrent processing, constraints. 
+\item Functions : user_login(), get_location(), calculate_eta(), bus_recommendation()
+\item Mathematical formulation if possible
+\item Success Conditions:Accurate locations of buses as well as the user is found.	 	 
+\item Failure Conditions:The recommended bus is not the most appropriate bus for the user.				
+\end{itemize}
+
+
+\section{Names of Conferences / Journals where papers can be published}
+\begin{itemize}
+\item  IEEE/ACM Conference/Journal 1 
+\item  Conferences/workshops in IITs
+\item  Central Universities or SPPU Conferences 
+\item IEEE/ACM Conference/Journal 2 
+\end{itemize}
+
+
+\section{Review of Conference/Journal Papers supporting Project idea}
+\label{sec:survey}
+   \begin{itemize}
+   \item [1].Ajay Shingare, AnkitaPendole, Nikita Chaudhari and Parikshit Deshpande “GPS Supported City Bus Tracking &amp; Smart Ticketing System” 2015 International Conference on Green Computing and Internet of Things (ICGCIoT)
+   \item[2].Leeza Singla, Dr. Parteek Bhatia “GPS Based Bus Tracking System” IEEE International Conference on Computer, Communication and Control (IC4-2015).
+   \item[3].K Sujatha, KJ Sruthi, P V Nageswara Rao, A Arjuna Rao “Design and development of android mobile based bus tracking system” 2014 First International Conference on Networks &amp; Soft Computing
+   \item[4].Pankaj Verma, J.S Bhatia, “Design and Development of GPSGSM Based Tracking System with Google Map Based Monitoring”, International Journal of Computer Science, Engineering and Applications (IJCSEA) Vol.3, No.3, June 2013.
+   \item[5].R. Ramani, S. Valarmathy, Dr. N. Suthanthira Vanitha, S.Selvaraju, M.Thiruppathi, R. Thangam, “ Vehicle Tracking and Locking System Based on GSM and GPS ”, MECS I.J. Intelligent Systems and Applications, 2013, 09.
+   \item[6].Dalip, Vijay Kumar Ph.D., “GPS and GSM based Passenger Tracking System”,International Journal of Computer Applications (0975 – 8887) Volume 100– No.2,August 2014.
+   \item[7].Christeena Joseph, A. D. Ayyappan, A. R. Aswini, B. Dhivya Bharathy,“GPS/GSM Based Bus Tracking System (BTS) ”, International Journal of Scientific &amp; Engineering Research, Volume 4, Issue 12, December-2013.
+   \item[8].Baburao Kodavati, V. K. Raju, S. Srinivasa Rao, A.V. Prabu, T. Appa Rao, Dr. Y.V. Narayana, “GSM and GPS Based Vehicle Location and Tracking System”,International Journal of Engineering Research and Applications (IJERA) ISSN:2248-9622 www.ijera.com Vol. 1, Issue 3, pp.616-625.
+   \item[9].Mr. Pradip Suresh Mane, Prof. Vaishali Khairnar, “Analysis of Bus Tracking System Using GPS on Smart Phones”, IOSR Journal of Computer Engineering (IOSR-JCE) e-ISSN: 2278- 0661, p- ISSN: 2278-8727Volume 16, Issue 2, Ver. XII (Mar-Apr. 2014), PP 80-82.
+   \item[10].R. Aravind Prasanna, S. Baskar, M. Hariharan, R. Prasanna Venkatesan, S.Swaminathan, “Efficient Travel Using SMART CARD and GPS Technology.”,International Journal of Engineering and Technology (IJET), Vol 5 No 3 Jun-Jul 2013.
+   \end{itemize}
+
+\section{Plan of Project Execution}
+  Using planner or alike project management tool.
+
+
+
+\chapter{Technical Keywords}
+\section{Area of Project}
+Smart Systems
+
+\section{Technical Keywords}
+% {\bfseries Technical Key Words:}      
+% \begin{itemize}
+%   \item 	Cloud Computing
+% \item	Service Composition
+% \item	Online Web services
+% \end{itemize}
+\begin{enumerate}
+	\item J. Computer Applications
+	\begin{enumerate}
+		\item J.7 COMPUTERS IN OTHER SYSTEMS 
+		\begin{enumerate}
+			    \item  Real Time
+				\item  Consumer Product
+	    \end{enumerate} 
+	 		
+    \end{enumerate} 
+    
+\end{enumerate}
+	
+\begin{enumerate}
+	\item E. Data
+	\begin{enumerate}
+		\item E.2 DATA STORAGE REPRESENTATIONS 
+			\begin{enumerate}
+				\item  Contiguous representations
+				\item  Linked representations
+				\item  Object representation 
+				\item  Primitive data items
+	 		\end{enumerate} 
+	 		
+    \end{enumerate}
+    
+\end{enumerate}
+
+
+			
+\chapter{Introduction}
+\section{Project Idea}
+\begin{itemize}
+\item This project is an initiative towards enhancing the passengers’ experience in availing City Bus services by providing real time information of Buses. In an effort to modernize its services, we are implementing Intelligent Transportation System (ITS) to strengthen city bus service delivery to the commuters.
+\end{itemize}
+
+
+\section{Motivation of the Project}  
+\begin{itemize}
+\item In current scenario if someone wants to travel by bus, they have to go to the bus stop and wait for some time since they don't know the timetable or even if they know the timetable, buses are not always on schedule.
+\item If a person is new in the city, then that person is not aware of the buses and how to reach the desired destination.
+\end{itemize}
+
+\section{Literature Survey}
+\begin{itemize}
+\item Ajay Shingare, AnkitaPendole, Nikita Chaudhari and Parikshit Deshpande “GPS Supported City Bus Tracking & Smart
+Now-a-days increasing density of vehicles on road is
+becoming the problem for the traffic control. Ultimately
+arising obstacle in the managing and tracking of the
+vehicle. Because of the problem state, it is necessary for
+every organizations and individuals to track the vehicle.
+People will monitor and track their vehicles for the safety
+concerns with the help of our Android app. Public
+transport and private buses tracked to citizens with traffic
+and transportation details like location, crowd, etc. The
+proposed system will be used for the positioning of the
+bus from remote location. The Smart Card based ticketing
+module which swaps the card to the smart hand held
+device for the transaction purpose. The smart ticketing
+device will also contain the dynamic routes as per the bus
+depot. The smart device has enhanced with the GSM and
+GPS technology and made available with required
+necessary configurations which makes it very efficient
+than that of the existing system.
+\item Leeza Singla, Dr. Parteek Bhatia “GPS Based Bus Tracking System” IEEE International Conference on Computer, Communication and Control (IC4-2015).
+In this fast life, everyone is in hurry to reach their
+destinations. In this case waiting for the buses is not reliable. People
+who rely on the public transport their major concern is to know the
+real time location of the bus for which they are waiting for and the
+time it will take to reach their bus stop. This information helps
+people in making better travelling decisions. This paper gives the
+major challenges in the public transport system and discuses
+various approaches to intelligently manage it. Current position of
+the bus is acquired by integrating GPS device on the bus and
+coordinates of the bus are sent by either GPRS service provided by
+GSM networks or SMS or RFID. GPS device is enabled on the
+tracking device and this information is sent to centralized control
+unit or directly at the bus stops using RF receivers. This system is
+further integrated with the historical average speeds of each
+segment. This is done to improve the accuracy by including the
+factors like volume of traffic, crossings in each segment, day and
+time of day. People can track information using LEDs at bus stops,
+SMS, web application or Android application. GPS coordinates of
+the bus when sent to the centralized server where various arrival
+time estimation algorithms are applied using historical speed
+patterns.
+\item Christeena Joseph, A. D. Ayyappan, A. R. Aswini, B. Dhivya Bharathy, “GPS/GSM Based Bus Tracking System (BTS) ”, International Journal of Scientific & Engineering Research, Volume 4, Issue 12, December-2013.
+Vehicle tracking systems are available vastly in market, but a good and effective product tends to be of more cost. This paper is proposed to design and develop a tracking system that is much cost effective than the systems available in the market. The tracking system here helps to know the location of the college bus through mobile phone when a SMS (Short Message Service) is sent to a specific number thus noticing the bus location via SMS. By incorporating a GPS(Global Positioning System) and GSM(Global System for Mobile communication) modem the location of the device by
+sending a SMS to the number specified. No external server or internet connection is used in knowing the location at user
+end which in return reduces the cost
+\item K Sujatha, KJ Sruthi, P V Nageswara Rao, A Arjuna Rao “Design and development of android mobile based bus tracking system” 2014 First International Conference on Networks & Soft Computing
+Tracking of organization buses while moving on highway is a crucial task. A person patiently waiting for the bus may want to enquire about the position of current location of the bus. Phone discussion is not always possible due to traffic disturbances. Further it involves variant costs due to the calls and message service over phone and the person in the bus may get annoyed if he gets multiple calls from people boarding that bus. Mobile based Bus Tracking System provides a solution to this problem which helps anyone to retrieve the location of the bus without calling or disturbing the person travelling in the bus. The people boarding the bus and the coordinators of the bus should own an android driven mobile phone with internet connectivity. The Global Positioning System (GPS) supports in area following with backing of Global Standard for Mobile (GSM) in cellular telephone to report transport area information again to the servers. Continuously, this shows where transports are on a guide and evaluation the entry time and separation with reference to holding up stop by utilizing propelled gimmicks of Internet. The function of proposed system is to provide an economical, flexible and reliable system for bus tracking.
+\end{itemize}
+
+
+\chapter{Problem Definition and scope}
+\section{Problem Statement}
+To design a system to monitor, track City buses and suggest the user most appropriate bus.
+
+
+\subsection{Goals and objectives}  
+Goal and Objectives: 
+\begin{itemize}
+  	\item To create a system which will save bus users time.
+	\item Real time tracking of buses
+	\item To improve quality, reliability, accuracy, usability
+	\item Recommend user the most suitable bus and the most suitable route
+\end{itemize}
+
+ \subsection{Statement of scope} 
+		\begin{itemize}  
+	\item Input: Source and Destination
+	\item Input Validation: Entered source and destination should be present in the database.
+	\item Output 1: A planned trip.
+	\end{itemize}
+
+
+\section{Major Constraints}
+\begin{itemize}
+\item This system is designed for a specific city and it is designed for people who travel by bus.
+\end{itemize}
+
+\section{Methodologies of Problem solving and efficiency issues}
+\begin{itemize}
+	\item Connectivity is required for this application to work.
+	\item Dynamic tracking should be accurate.
+\end{itemize}
+
+
+
+\section{Outcome}
+\begin{itemize}
+\item Increase and improve recommendations.
+\item To track the public transport.
+\end{itemize}
+
+\section{Applications}
+\begin{itemize}
+\item It can be used for real time tracking of the buses.
+\item It can be used for planning inter-city trips.
+\item It can be used for getting bus recommendations.
+\end{itemize}
+
+\section{Hardware Resources Required}
+\begin{table}[!htbp]
+\begin{center}
+\def\arraystretch{1.5}
+  \begin{tabular}{| c | c | c | c |}
+\hline
+Sr. No. &	Parameter &	Minimum Requirement & Justification \\
+\hline
+1 &	CPU Speed &	 2 GHz  & Remark Required\\
+\hline
+2 &	RAM  &	3 GB &  Remark Required\\
+ \hline
+\end{tabular}
+ \caption { Hardware Requirements }
+ \label{tab:hreq}
+\end{center}
+
+\end{table}
+
+
+\section{Software Resources Required}
+Platform : 
+\begin{enumerate}
+\item Operating System: Ubuntu 64 bit Opensource Operating System
+\item IDE: Android Studio, Eclipse, Adobe Dreamweaver
+\item Programming Languages: java, HTML, CSS, PHP
+\end{enumerate}
+
+
+
+
+\chapter{Project Plan}
+
+\section{Project Estimates}
+                 Use Waterfall model and associated streams derived from assignments 1,2, 3, 4 and 5( Annex A and B) for estimation. 
+\subsection{Reconciled Estimates}
+\subsubsection{Cost Estimate}
+
+Open source software are used. Therefore, no need for licensing cost.
+
+\subsubsection{Time Estimates}
+
+At least four months.
+
+\subsection{Project Resources}
+          \begin{itemize}
+\item 64-bit operating system
+\item 8 GB RAM
+\item Android Studio
+\item Java and SQL
+\item HTML,CSS and PHP 
+\end{itemize}
+
+
+\subsection{Project Resources}
+          Project resources  [People, Hardware, Software, Tools and other resources] based on Memory Sharing, IPC, and Concurrency derived using appendices to be referred. 
+
+\section{Risk Management w.r.t. NP Hard analysis}
+This section discusses Project risks and the approach to managing them.
+\subsection{Risk Identification}
+For risks identification, review of scope document, requirements specifications and schedule is done. Answers to questionnaire revealed some risks. Each risk is categorized as per the categories mentioned in \cite{bookPressman}. Please refer table \ref{tab:risk} for all the risks. You can refereed following risk identification questionnaire.
+
+\begin{enumerate}
+\item Have top software and customer managers formally committed to support the project?: No
+\item Are end-users enthusiastically committed to the project and the system/product to be built?: Yes
+\item Are requirements fully understood by the software engineering team and its customers?: Yes
+\item Have customers been involved fully in the definition of requirements?: Yes
+\item Do end-users have realistic expectations?: Yes
+\item Does the software engineering team have the right mix of skills?: Yes
+\item Are project requirements stable?: No
+\item Is the number of people on the project team adequate to do the job?: Yes
+\item Do all customer/user constituencies agree on the importance of the project and on the requirements for the system/product to be built?: Yes
+\end{enumerate}
+
+\subsection{Risk Analysis}
+The risks for the Project can be analyzed within the constraints of time and quality
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| c | X | c | c | c | c |}
+\hline
+\multirow{2}{*}{ID} & \multirow{2}{*}{Risk Description}	& \multirow{2}{*}{Probability} & \multicolumn{3}{|c|}{Impact} \\ \cline{4-6}
+	& & &	Schedule	& Quality	& Overall \\ \hline
+1	& Description 1	& Low	& Low	& High	& High \\ \hline
+2	& Description 2	& Low	& Low	& High	& High \\ \hline
+\end{tabularx}
+\end{center}
+\caption{Risk Table}
+\label{tab:risk}
+\end{table}
+
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabular}{| c | c | c |}
+\hline
+Probability & Value &	Description \\ \hline
+High &	Probability of occurrence is &  $ > 75 \% $ \\ \hline
+Medium &	Probability of occurrence is  & $26-75 \% $ \\ \hline
+Low	& Probability of occurrence is & $ < 25 \% $ \\ \hline
+\end{tabular}
+\end{center}
+\caption{Risk Probability definitions \cite{bookPressman}}
+\label{tab:riskdef}
+\end{table}
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| c | c | X |}
+\hline
+Impact & Value	& Description \\ \hline
+Very high &	$> 10 \%$ & Schedule impact or Unacceptable quality \\ \hline
+High &	$5-10 \%$ & Schedule impact or Some parts of the project have low quality \\ \hline
+Medium	& $ < 5 \% $ & Schedule impact or Barely noticeable degradation in quality Low	Impact on schedule or Quality can be incorporated \\ \hline
+\end{tabularx}
+\end{center}
+\caption{Risk Impact definitions \cite{bookPressman}}
+\label{tab:riskImpactDef}
+\end{table}
+
+\subsection{Overview of Risk Mitigation, Monitoring, Management}
+
+
+Following are the details for each risk.
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| l | X |}
+\hline 
+Risk ID	& 1 \\ \hline
+Risk Description	& Description 1 \\ \hline
+Category	& Development Environment. \\ \hline
+Source	& Software requirement Specification document. \\ \hline
+Probability	& Low \\ \hline
+Impact	& High \\ \hline
+Response	& Mitigate \\ \hline
+Strategy	& Strategy \\ \hline
+Risk Status	& Occurred \\ \hline
+\end{tabularx}
+\end{center}
+%\caption{Risk Impact definitions \cite{bookPressman}}
+\label{tab:risk1}
+\end{table}
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| l | X |}
+\hline 
+Risk ID	& 2 \\ \hline
+Risk Description	& Description 2 \\ \hline
+Category	& Requirements \\ \hline
+Source	& Software Design Specification documentation review. \\ \hline
+Probability	& Low \\ \hline
+Impact	& High \\ \hline
+Response	& Mitigate \\ \hline
+Strategy	& Better testing will resolve this issue.  \\ \hline
+Risk Status	& Identified \\ \hline
+\end{tabularx}
+\end{center}
+\label{tab:risk2}
+\end{table}
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| l | X |}
+\hline 
+Risk ID	& 3 \\ \hline
+Risk Description	& Description 3 \\ \hline
+Category	& Technology \\ \hline
+Source	& This was identified during early development and testing. \\ \hline
+Probability	& Low \\ \hline
+Impact	& Very High \\ \hline
+Response	& Accept \\ \hline
+Strategy	& Example Running Service Registry behind proxy balancer  \\ \hline
+Risk Status	& Identified \\ \hline
+\end{tabularx}
+\end{center}
+\label{tab:risk3}
+\end{table}
+
+\section{Project Schedule}  
+\subsection{Project Task Set}  
+Major Tasks in the Project stages are:
+\begin{itemize}
+  \item Task 1: Deciding input, output and scope
+  \item Task 2: Acquiring the data-set
+  \item Task 3: Pre-processing data-set and creating database
+  \item Task 4: Deciding and implementation of algorithm
+  \item Task 5: Creating GUI
+\end{itemize}
+
+\subsection{Task Network}  
+Project tasks and their dependencies are noted in this diagrammatic form.
+\subsection{Timeline Chart}  
+A project timeline chart is presented. This may include a time line for the entire project.
+Above points should be covered  in Project Planner as Annex C and you can mention here Please refer Annex C for the planner
+\includegraphics[width = 16cm]{task}
+
+ 
+\section{Team Organization}
+The manner in which staff is organized and the mechanisms for reporting are noted.  
+\subsection{Team Structure}\begin{itemize}
+  
+\end{itemize}
+
+\subsection{Management reporting and communication}
+Mechanisms for progress reporting and inter/intra team communication are identified as per assessment sheet and lab time table. 
+ 
+\chapter{Software requirement specification  }
+
+\section{Introduction}
+\subsection{Purpose and Scope of Document}
+An SRS is basically an organizations understanding (in writing) of a customer or potential clients system requirements and dependencies at a particular point in time (usually) prior to any actual design or development work. Its a two-way insurance policy that assures that both the client and the organization understand the others requirements from that perspective at a given point in time.
+\begin{itemize}
+\item It provides feedback to the customer.
+\item It decomposes the problem into component parts.
+\item It serves as an input to the design specification.
+\item It serves as the parent document.
+\end{itemize}
+
+\subsection{Overview of responsibilities of Developer}
+\begin{itemize}
+\item Initial research duties for a product development engineer include identifying the needs and goals for a new product, from function to aesthetics.
+
+\item They often coordinate with market researchers to evaluate market needs, existing competition and potential costs.
+
+\item The primary responsibility of development engineers is to create a product design that fulfills a company or client’s strategic goals.
+
+\item They oversee research and design teams, lead testing procedures and draft specifications for manufacturing.
+
+\item They direct the creation of models or samples and fine-tune designs until they are ready for production.
+\end{itemize}  
+  
+\section{Usage Scenario}
+This section provides various usage scenarios for the system to be developed.  
+ \subsection{User profiles}  
+\begin{itemize}
+\item A commuter : One who uses public transport. 
+\item Someone in the bus: A driver or a ticket checker.
+\end{itemize}
+
+\subsection{Use-cases}
+All use-cases for the software are presented. Description of all main Use cases using use case template is to be provided.
+
+\begin{table}[!htbp]
+\begin{center}
+%\def\arraystretch{1.5}
+\def\arraystretch{1.5}
+\begin{tabularx}{\textwidth}{| c | c | X | c | X |}
+\hline
+Sr No.	& Use Case	& Description	& Actors	& Assumptions \\
+\hline
+1& Use Case 1 & Description & Actors & Assumption \\
+\hline
+\end{tabularx}
+\end{center}
+\caption{Use Cases}
+\label{tab:usecase}
+\end{table}
+
+
+\subsection{Use Case View}
+Use Case Diagram. Example is given below
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{use_case_s.png}}
+	  \caption{Use case diagram}
+	  \label{fig:usecase}
+	\end{figure}
+\end{center}  
+
+\section{Data Model and Description}  
+\subsection{Data Description}  
+Data objects that will be managed/manipulated by the software are described in this section. The database entities or files or data structures  required to be described. For data objects details can be given as below
+\subsection{Data objects and Relationships}
+  Data objects and their major attributes and relationships among data objects are described using an ERD- like form.
+
+ 
+ 
+\section{Functional Model and Description}  
+A description of each major software function, along with data flow (structured analysis) or class hierarchy (Analysis Class diagram with class description for object oriented system) is presented. 
+\subsection{Data Flow Diagram}  
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{data_flow.png}}
+	  \caption{Data Flow diagram}
+	  \label{fig:usecase}
+	\end{figure}
+\end{center}
+\newpage
+
+
+
+ 
+\subsection{Activity Diagram:}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{activity-dig.png}}
+	  \caption{Activity Diagram}
+	  \label{fig:usecase}
+	\end{figure}
+\end{center} 
+\newpage
+
+\subsection{Non Functional Requirements:}
+\begin{itemize}
+	\item	Interface Requirements
+	\item	Performance Requirements
+    \item	Software quality attributes such as availability [ related to Reliability], modifiability [includes portability, reusability, scalability] ,  		performance, security, testability and usability[includes self 			adaptability and user adaptability] 
+\end{itemize} 
+
+\subsection{State Diagram:}	
+  State Transition Diagram\\
+Fig.\ref{fig:state-dig} example shows the state transition diagram of Cloud SDK. The states are
+represented in ovals and state of system gets changed when certain events occur. The transitions from one state to the other are represented by arrows. The Figure    shows important states and events that occur while creating new project.
+
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=230pt]{state-dig.png}}
+	  \caption{State transition diagram}
+	  \label{fig:state-dig}
+	\end{figure}
+\end{center} 
+ 
+ \subsection{Design Constraints}	
+Any design constraints that will impact the subsystem are noted.
+ \subsection{Software Interface Description}	 
+The software interface(s)to the outside world is(are) described.
+The requirements for interfaces to other devices/systems/networks/human are stated.
+
+
+
+\chapter{Detailed Design Document using Appendix A and B}
+ \section{Introduction}  
+This document specifies the design that is used to solve the problem of Product.  
+\section{Architectural Design}  
+	A description of the program architecture is presented. Subsystem design or Block diagram,Package Diagram,Deployment diagram with description is to be presented.
+
+ 
+  \begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=\textwidth]{arch.png}}
+	  \caption{Architecture diagram}
+	  \label{fig:arch-dig}
+	\end{figure}
+\end{center} 
+
+
+\section{Data design (using Appendices A and B)}   
+A description of all data structures including internal, global, and temporary data structures, database design (tables), file formats.
+\subsection{Data structure}
+Data structures can implement one or more particular abstract data types (ADT), which specify the operations that can be performed on a data structure and the computational complexity of those operations. In comparison, a data structure is a concrete implementation of the specification provided by an ADT
+Data structures used in project: arrays, lists, vectors
+\subsection{Database description}
+The location of every bus is stored dynamically in the Firebase database and it will be retrieved by every user every time they use the application. Hence live tracking of every bus is done.
+
+\section{Compoent Design} 
+Class diagrams, Interaction Diagrams, Algorithms. Description of each component description required.
+\subsection{Class Diagram}
+ \begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{class-dig.png}}
+	  \caption{Class Diagram}
+	  \label{fig:class-dig}
+	\end{figure}
+\end{center} 
+ 
+\chapter{Project Implementation}
+  \section{Introduction}
+  There are two applications. One application will be used by an authorized person who will be in the bus. The location of the phone hence the location of the bus will always be tracked and stored dynamically after every five seconds in the Firebase database. On the user side's application, current locations of all the buses will be shown on the map as their locations are retrieved from the database. Using GoogleMatrixAPI, eta will be calculated between two stations and accordingly the best bus will be recommended to the user.
+  \section{Tools and Technologies Used}
+ \begin{itemize}
+	\item	Android Studio
+	\item	Java
+    \item	Firebase
+    \item   Google APIs
+    \item   Java Libraries
+\end{itemize} 
+  \section{Methodologies/Algorithm Details}
+  We have used Dijkstra's algorithm and the recommendation algorithm.
+  \subsection{Algorithm 1/Pseudo Code}
+  \begin{enumerate}
+\item Get location of all the buses.
+\item All the buses will be displayed on the user side application.
+\item ETA is calculated between two bus stops.
+\item According to the user's source, destination and current time, a list of buses will be generated for the user.
+\item The best bus will be recommended to the user by taking all the factors in consideration. 
+\end{enumerate}
+  
+  
+\chapter{Software Testing}
+ \section{Type of Testing Used}
+   Unit Testing: Unit Testing is a level of software testing where individual units/ components of a software are tested. The purpose is to validate that
+each unit of the software performs as designed.
+
+   \section{Test Cases and Test Results}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{test_cases.PNG}}
+	  \caption{Test Cases}
+	  \label{fig:test_cases}
+	\end{figure}
+\end{center}  
+   
+\chapter{Results}
+\section{Screen shots}
+
+ \begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{analysis}}
+		 \caption{Analysis}
+	  \label{fig:Analysis}
+	\end{figure}
+\end{center}
+ \begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{recom}}
+	  \caption{Recommendation}
+	  \label{fig:class-dig}
+	\end{figure}
+\end{center}
+
+\chapter{Deployment and Maintenance}
+     \section{Installation and un-installation}
+     \begin{enumerate}
+\item Since there are two types of users and two applications, two APK will be generated.
+\item User side application can be put on the Google Play Store so that people can easily download it on their phone.
+\item The application which will be on phone which is in the bus should be installed by developers.
+\item If any bugs are found by the developers or by the users, they should be fixed. 
+\item User can un-install the application anytime they want. 
+\end{enumerate}
+     
+ \chapter{Conclusion and future scope}
+ \item We studied various papers related to our project idea and found various approaches to our idea taken by many authors in the past. We fixed our goals, objectives, scope of statement and outcome, studied relevant mathematics. We planned our project with realistic deadlines and distributed the work among ourselves. We managed to have all the hardware and softwares as per our requirements and SRS documents and other diagrams to proceed ready with us.
+ \item We implemented real time tracking of the buses and the current locations of the buses which was updated every 5 seconds and showed on the map. According to the source and destination of the user we recommended the best bus for the user.
+ \item In the future, we plan to enhance the system with some other estimation tools and statistical analysis. This might be used not only by public users but also by decision makers in the local municipalities. Moreover, since the system is developed with open standards and open sources, it is easily extended with future technologies according to users’ needs.The availability of accurate and fine-detailed real-time city wide traffic information data will open new opportunities for on-line route planning services based on computational learning and prediction. We can also predict the crowd in the bus which can help an individual to get the information prior to boarding the bus. We can also add a feature of Smart card based ticketing which is a very convenient option for traveling in bus. With the help of this facility, people can do cashless traveling, which is a secure way to travel in bus.
+
+% \bibliographystyle{plain}
+
+\bibliographystyle{ieeetr}
+\bibliography{biblo}
+
+\begin{appendices}
+
+\chapter{References}[1] Ajay Shingare, AnkitaPendole, Nikita Chaudhari and Parikshit Deshpande “GPS Supported City Bus Tracking and Smart
+Ticketing System” 2015 International Conference on Green Computing and Internet of Things (ICGCIoT)\newline
+[2] Leeza Singla, Dr. Parteek Bhatia “GPS Based Bus Tracking System” IEEE International Conference on Computer, Communication and Control (IC4-2015).\newline
+[3] K Sujatha, KJ Sruthi, P V Nageswara Rao, A Arjuna Rao “Design and development of android mobile based bus tracking system” 2014 First International Conference on Networks & Soft Computing\newline
+[4]. Pankaj Verma, J.S Bhatia, “Design and Development of GPSGSM Based Tracking System with Google Map Based Monitoring”, International Journal of Computer Science, Engineering and Applications (IJCSEA) Vol.3, No.3, June
+2013.\newline
+[5]. R. Ramani, S. Valarmathy, Dr. N. Suthanthira Vanitha, S.Selvaraju, M. Thiruppathi, R. Thangam, “ Vehicle Tracking and Locking System Based on GSM and GPS ”, MECS I.J. Intelligent Systems and Applications, 2013, 09.\newline
+[6]. Dalip, Vijay Kumar Ph.D., “GPS and GSM based Passenger Tracking System”, International Journal of Computer Applications (0975 – 8887) Volume 100– No.2, August 2014.\newline
+[7]. Christeena Joseph, A. D. Ayyappan, A. R. Aswini, B. Dhivya Bharathy, “GPS/GSM Based Bus Tracking System (BTS) ”, International Journal of Scientific and Engineering Research, Volume 4, Issue 12, December-2013.\newline
+[8].Urvi Thacker , Manjusha Pandey, Siddharth S. Rautaray,School of Computer Engineering KIIT University Bhubaneswar, India “Performance of Elasticsearch in Cloud Environment with nGram and non-nGram indexing”, International Conference on Electrical, Electronics, and Optimization Techniques (ICEEOT) - 2016.\newline
+[9]. Mr. Pradip Suresh Mane, Prof. Vaishali Khairnar, “Analysis of Bus Tracking System Using GPS on Smart Phones”, IOSR Journal of Computer Engineering (IOSR-JCE) e-ISSN: 2278- 0661, p- ISSN: 2278-8727Volume 16, Issue 2, Ver. XII (Mar-Apr. 2014), PP 80-82.\newline
+[10]. R. Aravind Prasanna, S. Baskar, M. Hariharan, R. Prasanna Venkatesan, S. Swaminathan, “Efficient Travel Using SMART CARD and GPS Technology.”, International Journal of Engineering and Technology (IJET), Vol 5 No 3 Jun-Jul 2013.
+
+% \chapter{ALGORITHMIC DESIGN}
+\chapter{Laboratory assignments on Project Analysis of Algorithmic Design}
+\begin{itemize}
+\item To develop the problem under consideration and justify feasibilty using
+concepts of knowledge canvas and IDEA Matrix.\\
+Refer \cite{innovationbook} for IDEA Matrix and Knowledge canvas model. Case studies are given in this book. IDEA Matrix is represented in the following form. Knowledge canvas represents about identification  of opportunity for product. Feasibility is represented w.r.t. business perspective.\\ 
+
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{idea.PNG}}
+	  \caption{IDEA Matrix}
+	  \label{fig:idea}
+	\end{figure}
+\end{center}
+
+
+\item Project problem statement feasibility assessment using NP-Hard, NP-Complete or satisfy ability issues using modern algebra and/or relevant mathematical models.
+\item input x,output y, y=f(x)
+\end{itemize}
+
+\chapter{Laboratory assignments on Project Quality and Reliability Testing of Project Design}
+
+It should include assignments such as
+\begin{itemize}
+\item Use of divide and conquer strategies to exploit distributed/parallel/concurrent processing of the above to identify object, morphisms, overloading in functions (if any), and functional relations and any other dependencies (as per requirements).
+             It can include Venn diagram, state diagram, function relations, i/o relations; use this to derive objects, morphism, overloading
+
+\item Use of above to draw functional dependency graphs and relevant Software modeling methods, techniques
+including UML diagrams or other necessities using appropriate tools.
+\item Testing of project problem statement using generated test data (using mathematical models, GUI, Function testing principles, if any) selection and appropriate use of testing tools, testing of UML diagram's reliability. Write also test cases [Black box testing] for each identified functions. 
+You can use Mathematical or equivalent open source tool for generating test data. 
+\item Additional assignments by the guide. If project type as Entreprenaur, Refer \cite{ehr},\cite{mckinsey},\cite{mckinseyweb}, \cite{govwebsite}
+\end{itemize}
+
+
+\chapter{Project Planner}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{plannerjpg.png}}
+	  \caption{Planner}
+	  \label{fig:planner}
+	\end{figure}
+\end{center}
+
+
+
+
+\chapter{Reviewers Comments of Paper Submitted}
+(At-least one technical paper must be submitted in Term-I on the project design in the
+conferences/workshops in IITs, Central Universities or UoP Conferences or equivalent International Conferences Sponsored by IEEE/ACM)
+\begin{enumerate}
+\item Paper Title:
+\item Name of the Conference/Journal where paper submitted :
+\item Paper accepted/rejected : 
+\item Review comments by reviewer :
+\item Corrective actions if any :  
+
+\end{enumerate}
+
+\chapter{Plagiarism Report}
+\begin{center}
+	\begin{figure}[!htbp]
+		\centering
+		\fbox{\includegraphics[width=450pt]{plag.JPG}}
+	  \caption{Plagiarism}
+	  \label{fig:plagirism}
+	\end{figure}
+\end{center}
+\chapter{ Term-II Project Laboratory Assignments}
+\begin{enumerate}
+\item Review of design and necessary corrective actions taking into consideration the feedback report of Term I assessment, and other competitions/conferences participated like IIT, Central Universities, University Conferences or equivalent centers of excellence etc.
+\item Project workstation selection, installations along with setup and installation report preparations.
+\item Programming of the project functions, interfaces and GUI (if any) as per 1 st Term term-work submission using corrective actions recommended in Term-I assessment of Term-work.
+\item Test tool selection and testing of various test cases for the project performed and generate various testing result charts, graphs etc. including reliability testing.\\
+\textbf{Additional assignments for the Entrepreneurship Project:}
+\item Installations and Reliability Testing Reports at the client end.
+
+\end{enumerate}
+\chapter{Information of Project Group Members}
+\begin{enumerate}
+\item Name : Ashutosh Kumar \hspace{90 mm}\includegraphics[width=60pt]{ashutosh.jpg}
+\item Date of Birth : 25/12/1995
+\item Gender : Male
+\item Permanent Address : Ashtvinayak Row House-1,Jachak nagar,Nashik 
+\item E-Mail : ashuak1225@gmail.com
+\item Mobile/Contact No. : 8275568155
+\item Placement Details : Placed at Accenture
+\item Paper Published : No
+
+\end{enumerate}
+
+
+
+\newpage
+\begin{enumerate}
+\item Name : Suraj Gholap \hspace{90 mm}\includegraphics[width=60pt]{suraj-crop.jpg}
+\item Date of Birth : 02/07/1994 
+\item Gender : Male
+\item Permanent Address : Plot no. 5, Chintamani Colony, Indiranagar, Nashik 
+\item E-Mail : surajgholap27@gmail.com
+\item Mobile/Contact No. : 8149961675
+\item Placement Details : Not Placed
+\item Paper Published : No
+
+\end{enumerate}
+
+\newpage
+\begin{enumerate}
+\item Name : Jay Modi \hspace{90 mm}\includegraphics[width=60pt]{jay-crop.jpg}
+\item Date of Birth : 19/05/1995 
+\item Gender : Male
+\item Permanent Address : Plot no. 807, Muktinagar Society, Bharuch. 
+\item E-Mail : 62jaymodi@gmail.com
+\item Mobile/Contact No. : 8149800309
+\item Placement Details : Placed at Right Steps Consultancy
+\item Paper Published : No
+
+\end{enumerate}
+
+\newpage
+\begin{enumerate}
+\item Name : Shivam Kulkarni \hspace{90 mm}\includegraphics[width=60pt]{shivam-crop.jpg}
+\item Date of Birth : 12/03/1996 
+\item Gender : Male
+\item Permanent Address : 484, 'Maitra', Old R.T.O. Sadarbazar, Satara
+\item E-Mail : shivamkulkarnimu10@gmail.com
+\item Mobile/Contact No. : 9158588150
+\item Placement Details : Placed at Accenture
+\item Paper Published : No
+
+\end{enumerate}
+\end{appendices}
+
+
+\end{document
